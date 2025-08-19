@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ヘッダータイトル */
+.page-title {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+}
+
+.page-title h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+.page-title .subtitle {
+    font-size: 1.2rem;
+    color: #ffcc00;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* 次回ライブセクション */
+.next-live-section {
+    margin-bottom: 60px;
+}
+
+.next-live-card {
+    background: linear-gradient(145deg, #ff1744, #ff6b6b);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(255, 23, 68, 0.3);
+    border: 2px solid #ff6b6b;
+    position: relative;
+    overflow: hidden;
+}
+
+.next-live-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+}
+
+.next-live-label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.next-live-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.next-live-date {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #fff3e0;
+}
+
+.next-live-venue {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #fff3e0;
+}
+
+.next-live-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.detail-item {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.detail-label {
+    font-size: 0.9rem;
+    color: #fff3e0;
+    margin-bottom: 5px;
+}
+
+.detail-value {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* セクションタイトル */
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #ffcc00;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #ffcc00, #ff6b6b);
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+/* ライブカード共通スタイル */
+.live-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+.live-card {
+    background: linear-gradient(145deg, #2c3e50, #34495e);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid #3d5a80;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.live-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(52, 73, 94, 0.4);
+    border-color: #ffcc00;
+}
+
+.live-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ffcc00, #ff6b6b, #4ecdc4);
+}
+
+.live-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.live-date {
+    font-size: 1.2rem;
+    color: #ffcc00;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.live-venue {
+    font-size: 1rem;
+    color: #a8dadc;
+    margin-bottom: 15px;
+}
+
+.live-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #3d5a80;
+}
+
+.live-info-item {
+    font-size: 0.9rem;
+    color: #b8c6db;
+}
+
+.live-info-label {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+/* 過去のライブ用スタイル */
+.past-live-card {
+    opacity: 0.8;
+    background: linear-gradient(145deg, #1a252f, #2c3e50);
+}
+
+.past-live-card:hover {
+    opacity: 1;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .page-title h1 {
+        font-size: 2rem;
+    }
+    
+    .next-live-title {
+        font-size: 1.8rem;
+    }
+    
+    .next-live-date {
+        font-size: 1.4rem;
+    }
+    
+    .live-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .next-live-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* スクロールアニメーション */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
