@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>デリスパ ディスコグラフィ</title>
+    <style>
+        /* リセット・基本設定 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ヘッダー */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* ディスコグラフィグリッド */
+        .discography-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        /* リリースカード */
+        .release-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .release-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        /* アルバムアートプレースホルダー */
+        .album-art {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .album-art::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80px;
+            height: 80px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .album-art-placeholder {
+            color: #999;
+            font-size: 1rem;
+            font-weight: 500;
+            z-index: 1;
+        }
+
+        /* 実際の画像が追加された時のスタイル */
+        .album-art img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .release-card:hover .album-art img {
+            transform: scale(1.05);
+        }
+
+        /* カード情報部分 */
+        .card-info {
+            padding: 25px;
+        }
+
+        .release-type {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .release-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #333;
+            line-height: 1.3;
+        }
+
+        .release-date {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .release-description {
+            color: #777;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* トラックリスト（将来の拡張用） */
+        .track-list {
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .track-list h4 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .track-list ul {
+            list-style: none;
+        }
+
+        .track-list li {
+            padding: 5px 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* アクションボタン */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .discography-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .release-card {
+                margin: 0 10px;
+            }
+            
+            .card-info {
+                padding: 20px;
+            }
+            
+            .release-title {
+                font-size: 1.5rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+
+        /* アニメーション */
+        .release-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .release-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .release-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 特別なスタイル（1stアルバム用） */
+        .album-card .release-type {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        }
+
+        .album-card:hover {
+            transform: translateY(-15px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ヘッダー -->
+        <header class="header">
+            <h1>DISCOGRAPHY</h1>
+            <p class="subtitle">デリスパの音楽作品</p>
+        </header>
+
+        <!-- ディスコグラフィグリッド -->
+        <div class="discography-grid">
+            <!-- 1stアルバム「作戦会議vol.1」 -->
+            <article class="release-card album-card">
+                <div class="album-art">
+                    <div class="album-art-placeholder">アルバムアート画像</div>
+                    <!-- 画像を追加する場合は以下のようにimgタグを使用 -->
+                    <!-- <img src="path/to/album-cover.jpg" alt="作戦会議vol.1 アルバムカバー"> -->
+                </div>
+                <div class="card-info">
+                    <span class="release-type">1st Album</span>
+                    <h2 class="release-title">作戦会議vol.1</h2>
+                    <p class="release-date">2025年8月3日リリース</p>
+                    <p class="release-description">
+                        デリスパ初のフルアルバム。これまでの楽曲の集大成として、バンドの多彩な音楽性を詰め込んだ意欲作。
+                        タイトル通り、次なる展開への「作戦会議」的な意味合いも込められている。
+                    </p>
+                    <div class="action-buttons">
+                        <a href="#" class="btn btn-primary">試聴する</a>
+                        <a href="#" class="btn btn-secondary">購入する</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2ndシングル「ミルキーウエイ」 -->
+            <article class="release-card">
+                <div class="album-art">
+                    <div class="album-art-placeholder">シングル画像</div>
+                    <!-- 画像を追加する場合は以下のようにimgタグを使用 -->
+                    <!-- <img src="path/to/milkyway-cover.jpg" alt="ミルキーウエイ シングルカバー"> -->
+                </div>
+                <div class="card-info">
+                    <span class="release-type">2nd Single</span>
+                    <h2 class="release-title">ミルキーウエイ</h2>
+                    <p class="release-date">2025年7月7日リリース</p>
+                    <p class="release-description">
+                        七夕の日にリリースされた2ndシングル。天の川をテーマにした幻想的な楽曲で、
+                        デリスパの新たな音楽的可能性を示した作品。
+                    </p>
+                    <div class="action-buttons">
+                        <a href="#" class="btn btn-primary">試聴する</a>
+                        <a href="#" class="btn btn-secondary">購入する</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 1stシングル「メッセージ」 -->
+            <article class="release-card">
+                <div class="album-art">
+                    <div class="album-art-placeholder">シングル画像</div>
+                    <!-- 画像を追加する場合は以下のようにimgタグを使用 -->
+                    <!-- <img src="path/to/message-cover.jpg" alt="メッセージ シングルカバー"> -->
+                </div>
+                <div class="card-info">
+                    <span class="release-type">1st Single</span>
+                    <h2 class="release-title">メッセージ</h2>
+                    <p class="release-date">2025年5月10日リリース</p>
+                    <p class="release-description">
+                        デリスパのデビューシングル。バンドの想いを込めたストレートなメッセージソングで、
+                        多くのリスナーの心に響く記念すべき1作目。
+                    </p>
+                    <div class="action-buttons">
+                        <a href="#" class="btn btn-primary">試聴する</a>
+                        <a href="#" class="btn btn-secondary">購入する</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</body>
+</html>
