@@ -1,0 +1,361 @@
+<!-- デリスパ ディスコグラフィページ - Cocoon対応版 -->
+<div class="delispa-discography">
+    <style>
+        /* Cocoon対応専用スタイル */
+        .delispa-discography {
+            font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .delispa-discography * {
+            box-sizing: border-box;
+        }
+
+        .delispa-discography .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        /* ヘッダー */
+        .delispa-discography .header {
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+        }
+
+        .delispa-discography .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+
+        .delispa-discography .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* ディスコグラフィグリッド */
+        .delispa-discography .discography-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        /* リリースカード */
+        .delispa-discography .release-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .delispa-discography .release-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        /* アルバムアートプレースホルダー */
+        .delispa-discography .album-art {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .delispa-discography .album-art::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 70px;
+            height: 70px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .delispa-discography .album-art-placeholder {
+            color: #999;
+            font-size: 0.95rem;
+            font-weight: 500;
+            z-index: 1;
+        }
+
+        /* 実際の画像が追加された時のスタイル */
+        .delispa-discography .album-art img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .delispa-discography .release-card:hover .album-art img {
+            transform: scale(1.05);
+        }
+
+        /* カード情報部分 */
+        .delispa-discography .card-info {
+            padding: 20px;
+        }
+
+        .delispa-discography .release-type {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .delispa-discography .release-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #333;
+            line-height: 1.3;
+        }
+
+        .delispa-discography .release-date {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+
+
+        /* アクションボタン */
+        .delispa-discography .action-buttons {
+            display: flex;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .delispa-discography .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            flex: 1;
+        }
+
+        .delispa-discography .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .delispa-discography .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            color: white;
+            text-decoration: none;
+        }
+
+        .delispa-discography .btn-secondary {
+            background: transparent;
+            color: #667eea;
+            border: 1.5px solid #667eea;
+        }
+
+        .delispa-discography .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* 特別なスタイル（1stアルバム用） */
+        .delispa-discography .album-card .release-type {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        }
+
+        .delispa-discography .album-card:hover {
+            transform: translateY(-12px);
+        }
+
+        /* アニメーション */
+        .delispa-discography .release-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .delispa-discography .release-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .delispa-discography .release-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Cocoon対応レスポンシブデザイン */
+        @media (max-width: 834px) {
+            .delispa-discography {
+                padding: 30px 15px;
+                margin: 15px 0;
+            }
+            
+            .delispa-discography .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .delispa-discography .discography-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .delispa-discography .album-art {
+                height: 250px;
+            }
+            
+            .delispa-discography .card-info {
+                padding: 18px;
+            }
+            
+            .delispa-discography .release-title {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .delispa-discography {
+                padding: 25px 10px;
+            }
+            
+            .delispa-discography .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .delispa-discography .header .subtitle {
+                font-size: 1rem;
+            }
+            
+            .delispa-discography .action-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .delispa-discography .btn {
+                flex: none;
+            }
+        }
+
+        /* Cocoonテーマとの競合回避 */
+        .delispa-discography a {
+            color: inherit;
+        }
+        
+        .delispa-discography h1,
+        .delispa-discography h2 {
+            border: none;
+            background: none;
+            padding: 0;
+        }
+    </style>
+
+    <div class="container">
+        <!-- ヘッダー -->
+        <header class="header">
+            <h1>DISCOGRAPHY</h1>
+            <p class="subtitle">デリスパの音楽作品</p>
+        </header>
+
+        <!-- ディスコグラフィグリッド -->
+        <div class="discography-grid">
+            <!-- 1stアルバム「作戦会議vol.1」 -->
+            <article class="release-card album-card">
+                <div class="album-art">
+                    <div class="album-art-placeholder">アルバムアート画像</div>
+                    <!-- 画像を追加する場合は以下のようにimgタグを使用 -->
+                    <!-- <img src="path/to/album-cover.jpg" alt="作戦会議vol.1 アルバムカバー"> -->
+                </div>
+                <div class="card-info">
+                    <span class="release-type">1st Album</span>
+                    <h2 class="release-title">作戦会議vol.1</h2>
+                    <p class="release-date">2025年8月3日リリース</p>
+
+                    <div class="action-buttons">
+                        <a href="#" class="btn btn-primary">試聴する</a>
+                        <a href="#" class="btn btn-secondary">購入する</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2ndシングル「ミルキーウエイ」 -->
+            <article class="release-card">
+                <div class="album-art">
+                    <div class="album-art-placeholder">シングル画像</div>
+                    <!-- 画像を追加する場合は以下のようにimgタグを使用 -->
+                    <!-- <img src="path/to/milkyway-cover.jpg" alt="ミルキーウエイ シングルカバー"> -->
+                </div>
+                <div class="card-info">
+                    <span class="release-type">2nd Single</span>
+                    <h2 class="release-title">ミルキーウエイ</h2>
+                    <p class="release-date">2025年7月7日リリース</p>
+
+                    <div class="action-buttons">
+                        <a href="#" class="btn btn-primary">試聴する</a>
+                        <a href="#" class="btn btn-secondary">購入する</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 1stシングル「メッセージ」 -->
+            <article class="release-card">
+                <div class="album-art">
+                    <div class="album-art-placeholder">シングル画像</div>
+                    <!-- 画像を追加する場合は以下のようにimgタグを使用 -->
+                    <!-- <img src="path/to/message-cover.jpg" alt="メッセージ シングルカバー"> -->
+                </div>
+                <div class="card-info">
+                    <span class="release-type">1st Single</span>
+                    <h2 class="release-title">メッセージ</h2>
+                    <p class="release-date">2025年5月10日リリース</p>
+
+                    <div class="action-buttons">
+                        <a href="#" class="btn btn-primary">試聴する</a>
+                        <a href="#" class="btn btn-secondary">購入する</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
