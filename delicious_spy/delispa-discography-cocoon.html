@@ -278,6 +278,94 @@
                 flex: none;
                 min-width: auto;
             }
+            
+            .delispa-discography .tracklist-title {
+                font-size: 1rem;
+            }
+            
+            .delispa-discography .track-item {
+                padding: 6px 0;
+            }
+            
+            .delispa-discography .track-title {
+                font-size: 0.9rem;
+            }
+            
+            .delispa-discography .track-badge {
+                font-size: 0.65rem;
+                padding: 1px 6px;
+            }
+        }
+
+        /* トラックリストスタイル */
+        .delispa-discography .tracklist {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .delispa-discography .tracklist-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .delispa-discography .tracklist-title::before {
+            content: '♪';
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+
+        .delispa-discography .track-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .delispa-discography .track-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #f8f8f8;
+            transition: background-color 0.2s ease;
+        }
+
+        .delispa-discography .track-item:hover {
+            background-color: #f8f9ff;
+            border-radius: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .delispa-discography .track-item:last-child {
+            border-bottom: none;
+        }
+
+        .delispa-discography .track-number {
+            font-weight: 600;
+            color: #667eea;
+            min-width: 25px;
+            font-size: 0.9rem;
+        }
+
+        .delispa-discography .track-title {
+            font-size: 0.95rem;
+            color: #555;
+            flex: 1;
+        }
+
+        .delispa-discography .track-badge {
+            background: #667eea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            margin-left: 8px;
         }
 
         /* Cocoonテーマとの競合回避 */
@@ -311,6 +399,45 @@
                     <span class="release-type">1st Album</span>
                     <h2 class="release-title">作戦会議vol.1</h2>
                     <p class="release-date">2025年8月3日リリース</p>
+
+                    <div class="tracklist">
+                        <h3 class="tracklist-title">収録曲</h3>
+                        <ol class="track-list">
+                            <li class="track-item">
+                                <span class="track-number">1</span>
+                                <span class="track-title">メッセージ</span>
+                            </li>
+                            <li class="track-item">
+                                <span class="track-number">2</span>
+                                <span class="track-title">トライ！！</span>
+                                <span class="track-badge">歌詞</span>
+                            </li>
+                            <li class="track-item">
+                                <span class="track-number">3</span>
+                                <span class="track-title">CHILL</span>
+                                <span class="track-badge">歌詞</span>
+                            </li>
+                            <li class="track-item">
+                                <span class="track-number">4</span>
+                                <span class="track-title">優しくしてね</span>
+                                <span class="track-badge">歌詞</span>
+                            </li>
+                            <li class="track-item">
+                                <span class="track-number">5</span>
+                                <span class="track-title">おしえて。</span>
+                                <span class="track-badge">歌詞</span>
+                            </li>
+                            <li class="track-item">
+                                <span class="track-number">6</span>
+                                <span class="track-title">SE～Attention！～</span>
+                            </li>
+                            <li class="track-item">
+                                <span class="track-number">7</span>
+                                <span class="track-title">エトワール</span>
+                                <span class="track-badge">歌詞</span>
+                            </li>
+                        </ol>
+                    </div>
 
                     <div class="action-buttons">
                         <a href="https://linkco.re/hPTsZmtd?lang=ja" class="btn btn-primary" target="_blank" rel="noopener noreferrer">配信／購入</a>
