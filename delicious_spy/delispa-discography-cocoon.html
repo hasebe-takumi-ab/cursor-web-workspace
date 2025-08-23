@@ -362,6 +362,143 @@
             margin-left: 8px;
         }
 
+        /* カテゴリナビゲーション */
+        .delispa-discography .category-nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            gap: 10px;
+        }
+
+        .delispa-discography .category-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+        }
+
+        .delispa-discography .category-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+            color: white;
+            text-decoration: none;
+        }
+
+        .delispa-discography .category-btn.active {
+            background: white;
+            color: #4a5568;
+            border-color: white;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .delispa-discography .category-btn.active:hover {
+            color: #4a5568;
+        }
+
+        /* カテゴリセクション */
+        .delispa-discography .category-section {
+            margin-bottom: 50px;
+        }
+
+        .delispa-discography .category-section.hidden {
+            display: none;
+        }
+
+        .delispa-discography .category-header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .delispa-discography .category-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .delispa-discography .category-title::before,
+        .delispa-discography .category-title::after {
+            content: '';
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, white, transparent);
+        }
+
+        .delispa-discography .category-subtitle {
+            font-size: 1rem;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .delispa-discography .category-count {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin-left: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* アルバムセクション特別スタイル */
+        .delispa-discography .albums-section .category-title {
+            color: #ffd700;
+        }
+
+        .delispa-discography .albums-section .category-title::before,
+        .delispa-discography .albums-section .category-title::after {
+            background: linear-gradient(90deg, transparent, #ffd700, transparent);
+        }
+
+        /* シングルセクション特別スタイル */
+        .delispa-discography .singles-section .category-title {
+            color: #87ceeb;
+        }
+
+        .delispa-discography .singles-section .category-title::before,
+        .delispa-discography .singles-section .category-title::after {
+            background: linear-gradient(90deg, transparent, #87ceeb, transparent);
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .delispa-discography .category-nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .delispa-discography .category-btn {
+                min-width: 200px;
+                text-align: center;
+            }
+
+            .delispa-discography .category-title {
+                font-size: 1.8rem;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .delispa-discography .category-title::before,
+            .delispa-discography .category-title::after {
+                width: 40px;
+            }
+        }
+
         /* Cocoonテーマとの競合回避 */
         .delispa-discography a {
             color: inherit;
@@ -382,8 +519,20 @@
             <p class="subtitle">DELICIOUS×SPY</p>
         </header>
 
-        <!-- ディスコグラフィグリッド -->
-        <div class="discography-grid">
+        <!-- カテゴリナビゲーション -->
+        <nav class="category-nav">
+            <button class="category-btn active" onclick="showCategory('all')">ALL</button>
+            <button class="category-btn" onclick="showCategory('albums')">ALBUMS</button>
+            <button class="category-btn" onclick="showCategory('singles')">SINGLES</button>
+        </nav>
+
+        <!-- アルバムセクション -->
+        <section class="category-section albums-section" id="albums-section">
+            <div class="category-header">
+                <h2 class="category-title">ALBUMS<span class="category-count">1</span></h2>
+                <p class="category-subtitle">フルアルバム作品</p>
+            </div>
+            <div class="discography-grid">
             <!-- 1stアルバム「作戦会議vol.1」 -->
             <article class="release-card album-card">
                 <div class="album-art">
@@ -433,6 +582,16 @@
                     </div>
                 </div>
             </article>
+            </div>
+        </section>
+
+        <!-- シングルセクション -->
+        <section class="category-section singles-section" id="singles-section">
+            <div class="category-header">
+                <h2 class="category-title">SINGLES<span class="category-count">2</span></h2>
+                <p class="category-subtitle">シングル作品</p>
+            </div>
+            <div class="discography-grid">
 
             <!-- 2ndシングル「ミルキーウエイ」 -->
             <article class="release-card">
@@ -465,6 +624,40 @@
                     </div>
                 </div>
             </article>
-        </div>
+            </div>
+        </section>
     </div>
+
+    <!-- カテゴリ切り替えJavaScript -->
+    <script>
+        function showCategory(category) {
+            // すべてのボタンからactiveクラスを削除
+            document.querySelectorAll('.delispa-discography .category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // クリックされたボタンにactiveクラスを追加
+            event.target.classList.add('active');
+            
+            // すべてのセクションを表示/非表示
+            const albumsSection = document.getElementById('albums-section');
+            const singlesSection = document.getElementById('singles-section');
+            
+            if (category === 'all') {
+                albumsSection.classList.remove('hidden');
+                singlesSection.classList.remove('hidden');
+            } else if (category === 'albums') {
+                albumsSection.classList.remove('hidden');
+                singlesSection.classList.add('hidden');
+            } else if (category === 'singles') {
+                albumsSection.classList.add('hidden');
+                singlesSection.classList.remove('hidden');
+            }
+        }
+        
+        // ページ読み込み時にすべて表示
+        document.addEventListener('DOMContentLoaded', function() {
+            showCategory('all');
+        });
+    </script>
 </div>
