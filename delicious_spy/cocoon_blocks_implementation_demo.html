@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DELICIOUS×SPY プロフィール - Cocoonブロック版デモ</title>
+    <style>
+        body {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .block-info {
+            background: #e3f2fd;
+            padding: 10px 15px;
+            margin: 20px 0;
+            border-left: 4px solid #2196f3;
+            border-radius: 5px;
+            font-size: 0.9em;
+            color: #1565c0;
+        }
+        .wp-block-spacer {
+            display: block;
+        }
+        .wp-block-heading {
+            margin: 0;
+        }
+        .has-white-color {
+            color: #ffffff !important;
+        }
+        .wp-block-media-text {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .wp-block-media-text__media {
+            flex-shrink: 0;
+        }
+        .wp-block-media-text__content {
+            flex: 1;
+            min-width: 250px;
+        }
+        .wp-block-media-text.is-stacked-on-mobile {
+            /* モバイル対応のスタイルはここで調整 */
+        }
+        .wp-block-image.aligncenter {
+            text-align: center;
+        }
+        .has-background {
+            padding: 2rem;
+        }
+        @media (max-width: 600px) {
+            .wp-block-media-text {
+                flex-direction: column;
+            }
+            .wp-block-media-text__media img {
+                width: 100% !important;
+                height: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="block-info">
+            📋 <strong>Cocoonブロックエディター版プロフィールページのデモ</strong><br>
+            このページは、各メンバーがWordPressのブロックエディターで直接編集できる構成になっています。
+        </div>
+
+        <!-- スペーサーブロック -->
+        <div style="height:4rem" aria-hidden="true" class="wp-block-spacer"></div>
+        <div class="block-info">🔧 <strong>スペーサーブロック</strong> - 上部余白（メンバー編集不要）</div>
+
+        <!-- 見出しブロック：DELICIOUS×SPY -->
+        <h2 class="wp-block-heading has-white-color has-text-color has-large-font-size" style="border-bottom:2px solid #ffffff;margin-bottom:2rem;padding-bottom:0.5rem;font-weight:bold;background:#333;padding:1rem;">DELICIOUS×SPY</h2>
+        <div class="block-info">✏️ <strong>見出しブロック</strong> - グループタイトル（運営管理）</div>
+
+        <!-- メディア・テキストブロック：池田華桜 -->
+        <div class="wp-block-media-text alignwide is-stacked-on-mobile has-background" style="background-color:#f9f9f9;border-radius:10px;border-left:4px solid #333333;margin-top:2rem;margin-bottom:2rem;padding:2rem">
+            <figure class="wp-block-media-text__media">
+                <a href="https://delicious-spy.com/%e6%b1%a0%e7%94%b0%e8%8f%af%e6%a1%9c/" target="_blank" rel="noopener">
+                    <img src="https://delicious-spy.com/wp-content/uploads/2025/06/LINE_ALBUM_素材_250415_2.jpg" alt="池田華桜" style="width:400px;height:600px;object-fit:cover;border-radius:10px;border:2px solid #ddd;cursor:pointer;transition:opacity 0.3s ease;"/>
+                </a>
+            </figure>
+            <div class="wp-block-media-text__content">
+                <!-- 名前見出し -->
+                <h3 class="wp-block-heading" style="color:#333333;margin-bottom:1rem;font-size:1.3rem;font-weight:bold">池田 華桜</h3>
+                
+                <!-- 基本情報 -->
+                <p style="color:#666666;margin-bottom:0.5rem;font-size:1rem">●誕生日：12月2日</p>
+                <p style="color:#666666;margin-bottom:1.5rem;font-size:1rem">●好きな食べ物：お菓子（マシュマロ以外）</p>
+                
+                <!-- SNSリンク -->
+                <div style="display: flex; gap: 15px; justify-content: center;">
+                    <a href="https://x.com/kagu_mama" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: #2d3436; border-radius: 50%; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/kaguratomama/?igsh=MXJraWRlczNkNm10Zw%3D%3D#" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); border-radius: 50%; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.40s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="block-info">
+            👤 <strong>メディア・テキストブロック（池田華桜編集可能）</strong><br>
+            ・画像: クリックして変更可能<br>
+            ・名前: 見出しブロック（通常変更不要）<br>
+            ・基本情報: 段落ブロック（誕生日・好きな食べ物など）<br>
+            ・SNS: カスタムHTMLブロック（URLのみ変更）
+        </div>
+
+        <!-- メディア・テキストブロック：富井龍介 -->
+        <div class="wp-block-media-text alignwide is-stacked-on-mobile has-background" style="background-color:#f9f9f9;border-radius:10px;border-left:4px solid #333333;margin-top:3rem;margin-bottom:2rem;padding:2rem">
+            <figure class="wp-block-media-text__media">
+                <a href="https://delicious-spy.com/%e5%af%8c%e4%ba%95%e9%be%8d%e4%bb%8b/" target="_blank" rel="noopener">
+                    <img src="https://delicious-spy.com/wp-content/uploads/2025/06/龍介アー写.jpg" alt="富井龍介" style="width:400px;height:400px;object-fit:cover;border-radius:10px;border:2px solid #ddd;cursor:pointer;transition:opacity 0.3s ease;"/>
+                </a>
+            </figure>
+            <div class="wp-block-media-text__content">
+                <h3 class="wp-block-heading" style="color:#333333;margin-bottom:1rem;font-size:1.3rem;font-weight:bold">富井 龍介</h3>
+                <p style="color:#666666;margin-bottom:0.5rem;font-size:1rem">●誕生日：5月26日</p>
+                <p style="color:#666666;margin-bottom:1.5rem;font-size:1rem">●好きな食べ物：麻婆豆腐</p>
+                
+                <div style="display: flex; gap: 15px; justify-content: center;">
+                    <a href="https://x.com/tommy_2b" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: #2d3436; border-radius: 50%; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/tommy_2b69/?igsh=MTVvdDNuM290ZDVhcw%3D%3D&utm_source=qr#" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); border-radius: 50%; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.40s-.644-1.44-1.439-1.40z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="block-info">👤 <strong>メディア・テキストブロック（富井龍介編集可能）</strong> - 池田華桜と同じ構成</div>
+
+        <!-- スペーサー（グループ間） -->
+        <div style="height:4rem" aria-hidden="true" class="wp-block-spacer"></div>
+        <div class="block-info">🔧 <strong>スペーサーブロック</strong> - グループ間余白</div>
+
+        <!-- DELICIOUS×SPY EX グループタイトル -->
+        <h2 class="wp-block-heading has-white-color has-text-color has-large-font-size" style="border-bottom:2px solid #ffffff;margin-bottom:2rem;padding-bottom:0.5rem;font-weight:bold;background:#333;padding:1rem;">DELICIOUS×SPY EX</h2>
+        <div class="block-info">✏️ <strong>見出しブロック</strong> - EXグループタイトル（運営管理）</div>
+
+        <!-- DELICIOUS×SPY EX グループ写真 -->
+        <figure class="wp-block-image aligncenter size-large" style="border-radius:15px;margin-top:2rem;margin-bottom:2rem">
+            <img src="https://delicious-spy.com/wp-content/uploads/2025/06/トレカ画像.jpg" alt="DELICIOUS×SPY EX" style="width:600px;height:auto;border-radius:15px;box-shadow:0 8px 16px rgba(0,0,0,0.2);border:3px solid #fff"/>
+        </figure>
+        <div class="block-info">🖼️ <strong>画像ブロック</strong> - EXグループ写真（運営管理・必要に応じてメンバー更新可能）</div>
+
+        <!-- HIRO プロフィール -->
+        <div class="wp-block-media-text alignwide is-stacked-on-mobile has-background" style="background-color:#f9f9f9;border-radius:10px;border-left:4px solid #333333;margin-top:3rem;margin-bottom:2rem;padding:2rem">
+            <figure class="wp-block-media-text__media">
+                <a href="https://delicious-spy.com/hiro/" target="_blank" rel="noopener">
+                    <img src="https://delicious-spy.com/wp-content/uploads/2025/06/ひろゆき.jpg" alt="HIRO" style="width:400px;height:400px;object-fit:cover;border-radius:10px;border:2px solid #ddd;cursor:pointer;transition:opacity 0.3s ease;"/>
+                </a>
+            </figure>
+            <div class="wp-block-media-text__content">
+                <h3 class="wp-block-heading" style="color:#333333;margin-bottom:1rem;font-size:1.3rem;font-weight:bold">HIRO</h3>
+                <p style="color:#666666;margin-bottom:0.5rem;font-size:1rem">●誕生日：11月19日</p>
+                <p style="color:#666666;margin-bottom:1.5rem;font-size:1rem">●好きな食べ物：寿司、ラーメン</p>
+                
+                <div style="display: flex; gap: 15px; justify-content: center;">
+                    <a href="https://x.com/hiroyuki_drum" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: #2d3436; border-radius: 50%; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="block-info">👤 <strong>メディア・テキストブロック（HIRO編集可能）</strong> - X(Twitter)のみ</div>
+
+        <!-- HiKaRu プロフィール -->
+        <div class="wp-block-media-text alignwide is-stacked-on-mobile has-background" style="background-color:#f9f9f9;border-radius:10px;border-left:4px solid #333333;margin-top:3rem;margin-bottom:2rem;padding:2rem">
+            <figure class="wp-block-media-text__media">
+                <a href="https://delicious-spy.com/hikaru/" target="_blank" rel="noopener">
+                    <img src="https://delicious-spy.com/wp-content/uploads/2025/06/ひかる-scaled.jpg" alt="HiKaRu" style="width:400px;height:400px;object-fit:cover;border-radius:10px;border:2px solid #ddd;cursor:pointer;transition:opacity 0.3s ease;"/>
+                </a>
+            </figure>
+            <div class="wp-block-media-text__content">
+                <h3 class="wp-block-heading" style="color:#333333;margin-bottom:1rem;font-size:1.3rem;font-weight:bold">HiKaRu</h3>
+                <p style="color:#666666;margin-bottom:0.5rem;font-size:1rem">●誕生日：3月19日</p>
+                <p style="color:#666666;margin-bottom:1.5rem;font-size:1rem">●好きな食べ物：唐揚げ</p>
+                
+                <div style="display: flex; gap: 15px; justify-content: center;">
+                    <a href="https://x.com/hikaru_0319_" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: #2d3436; border-radius: 50%; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/hika_0319/?igsh=MTUzbjZqYWw4ZHBkZQ%3D%3D#" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); border-radius: 50%; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.40s-.644-1.44-1.439-1.40z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/@hikaru__bass" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: #FF0000; border-radius: 50%; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="block-info">👤 <strong>メディア・テキストブロック（HiKaRu編集可能）</strong> - X、Instagram、YouTubeの3つ</div>
+
+        <!-- スペーサー（下部余白） -->
+        <div style="height:4rem" aria-hidden="true" class="wp-block-spacer"></div>
+        <div class="block-info">🔧 <strong>スペーサーブロック</strong> - 下部余白</div>
+
+        <div class="block-info" style="background:#f3e5f5;border-left-color:#9c27b0;">
+            🎯 <strong>実装のポイント</strong><br>
+            ・各メンバーは自分のメディア・テキストブロック内の情報のみ編集<br>
+            ・レイアウト崩れを防ぐため、構造的な変更は運営が管理<br>
+            ・モバイル対応も自動で適用される<br>
+            ・画像は適切なサイズでアップロードを推奨（400px程度）
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+

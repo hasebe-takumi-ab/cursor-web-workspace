@@ -1,163 +1,132 @@
 <!-- DELICIOUS×SPY ライブページ - SPYテーマ統合版 -->
 <!-- WordPress: カスタムHTMLブロック 1つで完結 -->
 
-<div id="delicious-spy-live-page" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: #ffffff; font-family: 'Arial', sans-serif; line-height: 1.6; padding: 20px 0; margin: 0; min-height: 500px; position: relative; overflow: hidden;">
-    <!-- SPY風背景エフェクト -->
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: 
-        radial-gradient(circle at 20% 50%, rgba(255, 204, 0, 0.03) 1px, transparent 1px),
-        radial-gradient(circle at 60% 30%, rgba(255, 107, 107, 0.03) 1px, transparent 1px),
-        radial-gradient(circle at 80% 70%, rgba(78, 205, 196, 0.03) 1px, transparent 1px); 
-        background-size: 50px 50px, 80px 80px, 60px 60px; z-index: 0; opacity: 0.5;"></div>
+<div id="delicious-spy-live-page" style="background: #ffffff; color: #333333; font-family: 'Arial', sans-serif; line-height: 1.6; padding: 0; margin: 0; min-height: 500px; position: relative;">
     
-    <div style="max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 1;">
+    <div style="max-width: 100%; margin: 0 auto; padding: 0; position: relative;">
         
         <!-- ページタイトル -->
-        <div style="text-align: center; margin-bottom: 40px; padding: 20px 0;">
-            <h1 style="font-size: 3rem; font-weight: bold; color: #ffffff; text-shadow: 0 0 20px rgba(255, 255, 255, 0.5); margin: 0 0 10px 0; letter-spacing: 3px; background: none; border: none; text-decoration: none;">DELICIOUS×SPY</h1>
-            <div style="font-size: 1.2rem; color: #ffcc00; text-transform: uppercase; letter-spacing: 2px; margin: 0;">🎯 OPERATIONS BRIEFING</div>
+        <div style="text-align: center; margin-bottom: 30px; padding: 20px 10px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
+            <h1 style="font-size: 2.5rem; font-weight: bold; color: #ffffff; text-shadow: 0 0 20px rgba(255, 255, 255, 0.5); margin: 0 0 10px 0; letter-spacing: 3px; background: none; border: none; text-decoration: none;">LIVE INFORMATION</h1>
+            <div style="font-size: 1rem; color: #ffcc00; text-transform: uppercase; letter-spacing: 2px; margin: 0;">🎯 OPERATIONS BRIEFING</div>
         </div>
 
         <!-- 次回ライブセクション -->
-        <div style="margin-bottom: 60px;">
-            <div class="fade-in" style="background: linear-gradient(145deg, #2c3e50, #34495e); border-radius: 20px; padding: 40px; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); border: 2px solid #ffcc00; position: relative; overflow: hidden; margin: 0;">
+        <div style="margin-bottom: 30px; padding: 0 10px;">
+            <div class="fade-in next-mission-card" style="background: linear-gradient(145deg, #2c3e50, #34495e); border-radius: 15px; padding: 15px 12px; text-align: center; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); border: 2px solid #ff6b6b; position: relative; overflow: hidden; margin: 0;">
                 
                 <!-- 次回ミッションラベル -->
-                <div style="font-size: 1.5rem; font-weight: bold; color: #ffffff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); position: relative; z-index: 1;">
+                <div class="next-mission-label" style="font-size: 1.1rem; font-weight: bold; color: #ffffff; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; position: relative; z-index: 1;">
                     🕵️ NEXT MISSION
                 </div>
                 
-                <!-- ライブタイトル -->
-                <h2 class="next-live-title" style="font-size: 2.5rem; font-weight: bold; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); position: relative; z-index: 1; color: #ffffff; background: none; border: none; text-decoration: none;">
-                    千葉STARNITE大作戦
-                </h2>
-                
-                <!-- 副題 -->
-                <div style="font-size: 1.4rem; margin-bottom: 10px; color: #ffcc00; position: relative; z-index: 1;">
-                    「MEDAPANISM ver.3.3」
-                </div>
-                
-                <!-- 日時 -->
-                <div style="font-size: 1.8rem; margin-bottom: 10px; color: #fff3e0; position: relative; z-index: 1;">
-                    2025年9月13日(土)
-                </div>
-                
-                <!-- 会場 -->
-                <div style="font-size: 1.3rem; margin-bottom: 20px; color: #fff3e0; position: relative; z-index: 1;">
-                    @千葉STARNITE
-                </div>
-                
-                <!-- 詳細情報グリッド -->
-                <div class="details-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px; position: relative; z-index: 1;">
+                <!-- メインコンテンツエリア（画像とテキストを横並び） -->
+                <div class="mission-main-layout" style="display: flex; flex-direction: column; gap: 12px;">
                     
-                    <!-- 開場/開演 -->
-                    <div style="background: rgba(255, 255, 255, 0.2); padding: 15px; border-radius: 10px; backdrop-filter: blur(10px);">
-                        <div style="font-size: 0.9rem; color: #fff3e0; margin-bottom: 5px;">開場/開演</div>
-                        <div style="font-size: 1.1rem; font-weight: bold; color: #ffffff;">17:00 / 17:30</div>
+                    <!-- 左側: 画像エリア（PC時のみ） -->
+                    <div class="mission-image-container" style="display: none;">
+                        <img class="next-mission-img-side" src="https://delicious-spy.com/wp-content/uploads/2025/09/西川口GALAXY大作戦.jpeg" 
+                             alt="西川口GALAXY大作戦 ティザー" 
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); border: 2px solid #ff6b6b;">
                     </div>
                     
-                    <!-- チケット料金 -->
-                    <div style="background: rgba(255, 255, 255, 0.2); padding: 15px; border-radius: 10px; backdrop-filter: blur(10px);">
-                        <div style="font-size: 0.9rem; color: #fff3e0; margin-bottom: 5px;">チケット</div>
-                        <div style="font-size: 1.1rem; font-weight: bold; color: #ffffff;">¥1,500 + 1D</div>
-                    </div>
-                    
-                </div>
-                
-                <!-- チケット予約ボタン -->
-                <div class="smart-fade-in" style="text-align: center; margin-top: 30px; position: relative; z-index: 1;">
-                    <a href="https://t.co/OMssorLLwg" target="_blank" 
-                       style="display: inline-block; background: linear-gradient(145deg, #ffcc00, #ffd700); color: #2c3e50; padding: 15px 35px; text-decoration: none; border-radius: 25px; font-weight: bold; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(255, 204, 0, 0.4); border: 2px solid #ffcc00; letter-spacing: 1px;">
-                        🎫 チケット予約
-                    </a>
-                </div>
+                    <!-- 右側: テキスト情報エリア -->
+                    <div class="mission-text-content" style="display: flex; flex-direction: column; flex: 1;">
+                        
+                        <!-- ライブタイトル -->
+                        <h2 class="next-mission-title" style="font-size: 1.6rem; font-weight: bold; margin-bottom: 6px; position: relative; z-index: 1; color: #ffffff; background: none; border: none; text-decoration: none;">
+                            西川口GALAXY大作戦
+                        </h2>
+                        
+                        <!-- 副題 -->
+                        <div class="next-mission-subtitle" style="font-size: 0.9rem; margin-bottom: 6px; color: #ffcc00; position: relative; z-index: 1;">
+                            自主企画LIVE（今年最後？）
+                        </div>
+                        
+                        <!-- 日時 -->
+                        <div class="next-mission-date" style="font-size: 1.2rem; margin-bottom: 4px; color: #fff3e0; position: relative; z-index: 1; font-weight: bold;">
+                            2025年11月15日(土)
+                        </div>
+                        
+                        <!-- 会場 -->
+                        <div class="next-mission-venue" style="font-size: 0.95rem; margin-bottom: 10px; color: #fff3e0; position: relative; z-index: 1;">
+                            @西川口Galaxy
+                        </div>
 
-                
-                <!-- SPY風背景エフェクト -->
-                <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,204,0,0.05) 0%, transparent 70%); z-index: 0; animation: pulse 4s ease-in-out infinite;"></div>
-                
-                <!-- 機密ファイル風装飾 -->
-                <div style="position: absolute; top: 10px; left: 10px; color: rgba(255,204,0,0.3); font-size: 0.7rem; font-weight: bold; z-index: 1;">CLASSIFIED</div>
-                <div style="position: absolute; bottom: 10px; right: 10px; color: rgba(255,204,0,0.3); font-size: 0.7rem; font-weight: bold; z-index: 1;">TOP SECRET</div>
+                        <!-- モバイル用画像 -->
+                        <div class="mission-mobile-image" style="text-align: center; margin: 10px 0;">
+                            <img class="next-mission-img" src="https://delicious-spy.com/wp-content/uploads/2025/09/西川口GALAXY大作戦.jpeg" 
+                                 alt="西川口GALAXY大作戦 ティザー" 
+                                 style="max-width: 100%; width: 100%; height: auto; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); border: 2px solid #ff6b6b;">
+                        </div>
+                        
+                        <!-- 詳細情報グリッド -->
+                        <div class="next-mission-details" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px;">
+                            
+                            <!-- 開場/開演 -->
+                            <div style="background: rgba(255, 255, 255, 0.15); padding: 10px 8px; border-radius: 8px; text-align: center;">
+                                <div style="color: #fff3e0; font-size: 0.7rem; margin-bottom: 3px;">開場/開演</div>
+                                <div style="font-weight: bold; color: #ffffff; font-size: 0.95rem;">11:30 / 11:50</div>
+                            </div>
+                            
+                            <!-- チケット料金 -->
+                            <div style="background: rgba(255, 255, 255, 0.15); padding: 10px 8px; border-radius: 8px; text-align: center;">
+                                <div style="color: #fff3e0; font-size: 0.7rem; margin-bottom: 3px;">チケット</div>
+                                <div style="font-weight: bold; color: #ffffff; font-size: 0.85rem;">¥3,000 + 1D</div>
+                                <div style="color: #ffcc00; font-size: 0.7rem; margin-top: 2px;">学生: ¥1,000 + 1D</div>
+                            </div>
+                            
+                        </div>
+                        
+                        <!-- チケット予約ボタン -->
+                        <div style="text-align: center; margin-top: 15px; position: relative; z-index: 1;">
+                            <a class="next-mission-button" href="https://t.co/uabAAKkwp4" target="_blank" 
+                               style="display: inline-block; background: linear-gradient(145deg, #ff6b6b, #ff5252); color: #ffffff; padding: 10px 28px; text-decoration: none; border-radius: 20px; font-weight: bold; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4); border: 2px solid #ff6b6b;">
+                                🎫 チケット予約
+                            </a>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
                 
             </div>
         </div>
-
         <!-- 今後のライブセクション -->
-        <div style="margin-bottom: 40px;">
-            <h2 style="font-size: 2rem; margin-bottom: 30px; color: #ffcc00; text-align: center; text-transform: uppercase; letter-spacing: 2px; position: relative; background: none; border: none; text-decoration: none;">
-                🔍 UPCOMING OPERATIONS
-            </h2>
-            <div style="width: 100px; height: 3px; background: linear-gradient(90deg, #ffcc00, #4ecdc4); margin: -20px auto 40px auto; border-radius: 2px;"></div>
+        <div style="margin-bottom: 20px; padding: 0 10px;">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="https://delicious-spy.com/wp-content/uploads/2025/10/UPCOMING_OPERATIONS_Aphasia.png" 
+                     alt="UPCOMING OPERATIONS" 
+                     style="max-width: 100%; width: auto; height: auto; max-height: 80px; display: inline-block;">
+            </div>
         </div>
         
         <!-- 今後のライブカードグリッド -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-bottom: 60px;">
+        <div class="live-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-bottom: 40px; padding: 0 10px;">
 
-            <!-- Anything Allright Festival -->
-            <div class="live-card fade-in" style="background: linear-gradient(145deg, #2c3e50, #34495e); border-radius: 15px; padding: 25px; border: 1px solid #3d5a80; transition: all 0.3s ease; position: relative; overflow: hidden; border-top: 4px solid #4ecdc4;">
+            <!-- 小岩オルフェウス大作戦 第2弾 -->
+            <div class="live-card fade-in" style="background: linear-gradient(145deg, #2c3e50, #34495e); border-radius: 15px; padding: 20px 15px; border: 1px solid #3d5a80; transition: all 0.3s ease; position: relative; overflow: hidden; border-top: 4px solid #ffcc00; text-align: center;">
                 <h3 style="font-size: 1.4rem; font-weight: bold; margin-bottom: 15px; color: #ffffff; background: none; border: none; text-decoration: none;">
                     小岩オルフェウス大作戦<br>
                     <span style="font-size: 1.1rem; color: #ffcc00;">「Anything Allright Festival」</span>
                 </h3>
                 <div style="font-size: 1.2rem; color: #ffcc00; margin-bottom: 8px; font-weight: bold;">
-                    2025年10月5日(日)
+                    2025年12月14日(日)
                 </div>
                 <div style="font-size: 1rem; color: #a8dadc; margin-bottom: 15px;">
                     @小岩オルフェウス
                 </div>
-                
-                <!-- 特別情報エリア -->
-                <div style="background: rgba(255, 204, 0, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; border: 1px solid rgba(255, 204, 0, 0.3);">
-                    <div style="font-size: 0.9rem; color: #b8c6db; margin-bottom: 10px;">
-                        <span style="color: #ffcc00; font-weight: bold;">開演時間:</span> 未発表
-                    </div>
-                    <div style="font-size: 0.9rem; color: #b8c6db; margin-bottom: 5px;">
-                        <span style="color: #ffcc00; font-weight: bold;">チケット:</span> ¥2,000 + 1ドリンク
-                    </div>
-                    <div style="font-size: 0.9rem; color: #b8c6db; margin-bottom: 15px;">
-                        <span style="color: #ffcc00; font-weight: bold;">未就学児:</span> 無料（保護者の同伴必須）
-                    </div>
-                    <div style="font-size: 1rem; color: #ff4757; font-weight: bold; text-align: center; padding: 10px; background: rgba(255, 71, 87, 0.1); border-radius: 8px; border: 1px solid rgba(255, 71, 87, 0.5); margin-bottom: 15px; animation: urgentPulse 2s ease-in-out infinite;">
-                        🎯 ULTIMATE MISSION: 武道館コンテストエントリー中！
-                    </div>
-                    
-                    <!-- チケット予約ボタン -->
-                    <div class="smart-fade-in" style="text-align: center; margin-top: 15px;">
-                        <a href="https://t.co/OMssorLLwg" target="_blank" 
-                           style="display: inline-block; background: linear-gradient(145deg, #ffcc00, #ffd700); color: #2c3e50; padding: 10px 25px; text-decoration: none; border-radius: 20px; font-weight: bold; font-size: 0.9rem; transition: all 0.3s ease; box-shadow: 0 3px 10px rgba(255, 204, 0, 0.3); border: 2px solid #ffcc00;">
-                            🎫 チケット予約
-                        </a>
-                    </div>
+
+                <!-- 特別メッセージ - 武道館コンテスト強調 -->
+                <div style="font-size: 1.1rem; color: #ff4757; font-weight: bold; text-align: center; padding: 12px 10px; background: rgba(255, 71, 87, 0.15); border-radius: 8px; border: 2px solid rgba(255, 71, 87, 0.6); margin: 20px 0; animation: urgentPulse 2s ease-in-out infinite; box-shadow: 0 0 15px rgba(255, 71, 87, 0.3);">
+                    🎯 ULTIMATE MISSION<br>
+                    <span style="font-size: 1.3rem; letter-spacing: 1px;">武道館コンテスト<br>エントリー中！</span>
                 </div>
 
-            </div>
-
-            <!-- 西川口GALAXY大作戦 -->
-            <div class="live-card fade-in" style="background: linear-gradient(145deg, #2c3e50, #34495e); border-radius: 15px; padding: 25px; border: 1px solid #3d5a80; transition: all 0.3s ease; position: relative; overflow: hidden; border-top: 4px solid #ff6b6b;">
-                <h3 style="font-size: 1.4rem; font-weight: bold; margin-bottom: 15px; color: #ffffff; background: none; border: none; text-decoration: none;">
-                    西川口GALAXY大作戦<br>
-                    <span style="font-size: 1.1rem; color: #ffcc00;">自主企画LIVE（今年最後？）</span>
-                </h3>
-                <div style="font-size: 1.2rem; color: #ffcc00; margin-bottom: 8px; font-weight: bold;">
-                    2025年11月15日(土)
-                </div>
-                <div style="font-size: 1rem; color: #a8dadc; margin-bottom: 15px;">
-                    @西川口Galaxy
-                </div>
-                
-                <!-- 特別情報エリア -->
-                <div style="background: rgba(255, 204, 0, 0.1); padding: 15px; border-radius: 10px; margin-top: 15px; border: 1px solid rgba(255, 204, 0, 0.3);">
-                    <div style="font-size: 0.9rem; color: #b8c6db; margin-bottom: 10px;">
-                        <span style="color: #ffcc00; font-weight: bold;">出演者:</span> 詳細発表は後日
-                    </div>
-                    <div style="font-size: 0.9rem; color: #b8c6db; margin-bottom: 10px;">
-                        <span style="color: #ffcc00; font-weight: bold;">開演時間:</span> 詳細発表は後日
-                    </div>
-                    <div style="font-size: 0.9rem; color: #b8c6db; margin-bottom: 15px;">
-                        <span style="color: #ffcc00; font-weight: bold;">チケット:</span> 詳細発表は後日
-                    </div>
-                    <div style="font-size: 0.9rem; color: #4ecdc4; text-align: center; font-style: italic; padding: 10px; background: rgba(78, 205, 196, 0.1); border-radius: 8px;">
-                        11/15(土)は任務遂行の為に予定を空けてお待ちください🕵️
+                <!-- 情報公開待ちメッセージ -->
+                <div style="text-align: center; margin-top: 20px; padding: 10px; background: rgba(255, 204, 0, 0.1); border-radius: 8px; border: 1px solid rgba(255, 204, 0, 0.3);">
+                    <div style="font-size: 0.9rem; color: #ffcc00; font-weight: bold;">
+                        📢 詳細情報は後日発表予定
                     </div>
                 </div>
 
@@ -166,29 +135,93 @@
         </div>
 
         <!-- 過去のライブセクション -->
-        <div style="margin-bottom: 40px; margin-top: 60px;">
-            <h2 style="font-size: 2rem; margin-bottom: 30px; color: #ffcc00; text-align: center; text-transform: uppercase; letter-spacing: 2px; position: relative; background: none; border: none; text-decoration: none;">
-                📋 COMPLETED MISSIONS
-            </h2>
-            <div style="width: 100px; height: 3px; background: linear-gradient(90deg, #ffcc00, #4ecdc4); margin: -20px auto 40px auto; border-radius: 2px;"></div>
+        <div style="margin-bottom: 20px; margin-top: 40px; padding: 0 10px;">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="https://delicious-spy.com/wp-content/uploads/2025/10/COMPLETED_MISSIONS_Aphasia.png" 
+                     alt="COMPLETED MISSIONS" 
+                     style="max-width: 100%; width: auto; height: auto; max-height: 80px; display: inline-block;">
+            </div>
         </div>
         
         <!-- 過去のライブカードグリッド -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-bottom: 60px;">
+        <div class="live-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-bottom: 40px; padding: 0 10px;">
             
-            <!-- 秋葉原GALAXY大作戦 -->
-            <a href="#" style="text-decoration: none; color: inherit; display: block;">
-            <div class="live-card fade-in" style="background: linear-gradient(145deg, #1a252f, #2c3e50); border-radius: 15px; padding: 0; border: 1px solid #3d5a80; transition: all 0.3s ease; position: relative; overflow: hidden; opacity: 0.8; border-top: 4px solid #ff6b6b; cursor: pointer;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(52, 73, 94, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+            <!-- 小岩オルフェウス大作戦 -->
+            <a href="https://delicious-spy.com/2025/10/06/%e3%80%90%e5%be%a1%e7%a4%bc%e3%80%91%e5%b0%8f%e5%b2%a9%e3%82%aa%e3%83%ab%e3%83%95%e3%82%a7%e3%82%a6%e3%82%b9%e5%a4%a7%e4%bd%9c%e6%88%a6%ef%bc%81/" target="_blank" style="text-decoration: none; color: inherit; display: block;">
+            <div class="live-card fade-in" style="background: linear-gradient(145deg, #1a252f, #2c3e50); border-radius: 15px; padding: 0; border: 1px solid #3d5a80; transition: all 0.3s ease; position: relative; overflow: hidden; opacity: 0.8; border-top: 4px solid #ffcc00; cursor: pointer;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(52, 73, 94, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
                 
                 <!-- ライブ写真 -->
                 <div style="width: 100%; height: 200px; background: linear-gradient(45deg, #2c3e50, #34495e); display: flex; align-items: center; justify-content: center; position: relative;">
-                    <div style="font-size: 4rem; color: #ffcc00; opacity: 0.3;">🎸</div>
+                    <!-- 小岩オルフェウス大作戦の写真 -->
+                    <img src="https://delicious-spy.com/wp-content/uploads/2025/10/DSC_7037_Original-scaled.jpeg" alt="小岩オルフェウス大作戦「Anything Allright Festival」" style="width: 100%; height: 200px; object-fit: cover; object-position: center; border-radius: 0;">
                 </div>
                 
                 <!-- テキスト情報 -->
                 <div style="padding: 25px; position: relative;">
                     <h3 style="font-size: 1.4rem; font-weight: bold; margin-bottom: 15px; color: #ffffff; background: none; border: none; text-decoration: none;">
-                        緊急mission 秋葉原GALAXY大作戦<br>
+                        小岩オルフェウス大作戦<br>
+                        <span style="font-size: 1.1rem; color: #ffcc00;">「Anything Allright Festival」</span>
+                    </h3>
+                    <div style="font-size: 1.2rem; color: #ffcc00; margin-bottom: 8px; font-weight: bold;">
+                        2025年10月5日(日)
+                    </div>
+                    <div style="font-size: 1rem; color: #a8dadc; margin-bottom: 15px;">
+                        @小岩オルフェウス
+                    </div>
+                    
+                    <!-- MISSION COMPLETEDタグ -->
+                    <div style="position: absolute; top: 15px; right: 15px; background: transparent; color: #dc2626; padding: 8px 12px; border: 2px solid #dc2626; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; transform: rotate(-5deg) skew(1deg); opacity: 0.85; filter: blur(0.2px); text-shadow: 1px 1px 2px rgba(220, 38, 38, 0.4), -1px -1px 1px rgba(220, 38, 38, 0.3); box-shadow: inset 1px 1px 2px rgba(220, 38, 38, 0.1), inset -1px -1px 2px rgba(220, 38, 38, 0.1), 2px 2px 4px rgba(0,0,0,0.15);">
+                        MISSION<br>COMPLETED
+                    </div>
+                </div>
+            </div>
+            </a>
+            
+            <!-- 千葉STARNITE大作戦 -->
+            <a href="https://delicious-spy.com/2025/09/14/%e3%80%90%e5%be%a1%e7%a4%bc%e3%80%919-13%e5%9c%9f%e5%8d%83%e8%91%89starnite%e5%a4%a7%e4%bd%9c%e6%88%a6/" target="_blank" style="text-decoration: none; color: inherit; display: block;">
+            <div class="live-card fade-in" style="background: linear-gradient(145deg, #1a252f, #2c3e50); border-radius: 15px; padding: 0; border: 1px solid #3d5a80; transition: all 0.3s ease; position: relative; overflow: hidden; opacity: 0.8; border-top: 4px solid #4ecdc4; cursor: pointer;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(52, 73, 94, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                
+                <!-- ライブ写真 -->
+                <div style="width: 100%; height: 200px; background: linear-gradient(45deg, #2c3e50, #34495e); display: flex; align-items: center; justify-content: center; position: relative;">
+                    <!-- 千葉STARNITE大作戦の写真 -->
+                    <img src="https://delicious-spy.com/wp-content/uploads/2025/09/千葉STARNITE大作戦1.png" alt="千葉STARNITE大作戦「MEDAPANISM ver.3.3」" style="width: 100%; height: 200px; object-fit: cover; object-position: center; border-radius: 0;">
+                </div>
+                
+                <!-- テキスト情報 -->
+                <div style="padding: 25px; position: relative;">
+                    <h3 style="font-size: 1.4rem; font-weight: bold; margin-bottom: 15px; color: #ffffff; background: none; border: none; text-decoration: none;">
+                        千葉STARNITE大作戦<br>
+                        <span style="font-size: 1.1rem; color: #ffcc00;">「MEDAPANISM ver.3.3」</span>
+                    </h3>
+                    <div style="font-size: 1.2rem; color: #ffcc00; margin-bottom: 8px; font-weight: bold;">
+                        2025年9月13日(土)
+                    </div>
+                    <div style="font-size: 1rem; color: #a8dadc; margin-bottom: 15px;">
+                        @千葉STARNITE
+                    </div>
+                    
+                    <!-- MISSION COMPLETEDタグ -->
+                    <div style="position: absolute; top: 15px; right: 15px; background: transparent; color: #dc2626; padding: 8px 12px; border: 2px solid #dc2626; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; transform: rotate(-5deg) skew(1deg); opacity: 0.85; filter: blur(0.2px); text-shadow: 1px 1px 2px rgba(220, 38, 38, 0.4), -1px -1px 1px rgba(220, 38, 38, 0.3); box-shadow: inset 1px 1px 2px rgba(220, 38, 38, 0.1), inset -1px -1px 2px rgba(220, 38, 38, 0.1), 2px 2px 4px rgba(0,0,0,0.15);">
+                        MISSION<br>COMPLETED
+                    </div>
+                </div>
+            </div>
+            </a>
+            
+            <!-- 秋葉原GALAXY大作戦 -->
+            <a href="https://delicious-spy.com/2025/08/27/%e3%80%90%e5%be%a1%e7%a4%bc%e3%80%91%e7%b7%8a%e6%80%a5mission%ef%bc%81%e7%a7%8b%e8%91%89%e5%8e%9fgalaxy%e5%a4%a7%e4%bd%9c%e6%88%a6%ef%bc%81%ef%bc%81/" target="_blank" style="text-decoration: none; color: inherit; display: block;">
+            <div class="live-card fade-in" style="background: linear-gradient(145deg, #1a252f, #2c3e50); border-radius: 15px; padding: 0; border: 1px solid #3d5a80; transition: all 0.3s ease; position: relative; overflow: hidden; opacity: 0.8; border-top: 4px solid #ff6b6b; cursor: pointer;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(52, 73, 94, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                
+                <!-- ライブ写真 -->
+                <div style="width: 100%; height: 200px; background: linear-gradient(45deg, #2c3e50, #34495e); display: flex; align-items: center; justify-content: center; position: relative;">
+                    <!-- 秋葉原GALAXY大作戦の写真 -->
+                    <img src="https://delicious-spy.com/wp-content/uploads/2025/08/20250824_秋葉原Galaxy.png" alt="緊急mission 秋葉原GALAXY大作戦" style="width: 100%; height: 200px; object-fit: cover; object-position: center 20%; border-radius: 0;">
+                </div>
+                
+                <!-- テキスト情報 -->
+                <div style="padding: 25px; position: relative;">
+                    <h3 style="font-size: 1.4rem; font-weight: bold; margin-bottom: 15px; color: #ffffff; background: none; border: none; text-decoration: none;">
+                        緊急mission<br>秋葉原GALAXY大作戦<br>
                         <span style="font-size: 1.1rem; color: #ffcc00;">「DELICIOUS×SPY EX」</span>
                     </h3>
                     <div style="font-size: 1.2rem; color: #ffcc00; margin-bottom: 8px; font-weight: bold;">
@@ -308,10 +341,6 @@
                 DELICIOUS×SPY
             </div>
             
-            <!-- 連絡先情報 -->
-            <div style="color: #b8c6db; margin-bottom: 20px; line-height: 1.8;">
-                <div>🕵️ X (Twitter): @DeliciousSPY49</div>
-            </div>
             
             <!-- SNSリンク -->
             <div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 30px; flex-wrap: wrap;">
@@ -422,6 +451,111 @@
     50% { 
         box-shadow: 0 0 20px rgba(255, 71, 87, 0.6), 0 0 30px rgba(255, 71, 87, 0.3);
         transform: scale(1.02);
+    }
+}
+
+/* レスポンシブ対応 - PC用 */
+@media (min-width: 768px) {
+    #delicious-spy-live-page .next-mission-card {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 25px 20px !important;
+    }
+    
+    #delicious-spy-live-page .next-mission-label {
+        font-size: 1.3rem !important;
+        margin-bottom: 12px !important;
+    }
+    
+    /* PC表示: 画像を左側に配置 */
+    #delicious-spy-live-page .mission-main-layout {
+        flex-direction: row !important;
+        gap: 20px !important;
+        align-items: stretch !important;
+    }
+    
+    /* 画像コンテナを表示（左側） */
+    #delicious-spy-live-page .mission-image-container {
+        display: block !important;
+        flex: 0 0 45% !important;
+        min-height: 500px !important;
+    }
+    
+    #delicious-spy-live-page .next-mission-img-side {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+    
+    /* モバイル用画像を非表示 */
+    #delicious-spy-live-page .mission-mobile-image {
+        display: none !important;
+    }
+    
+    /* テキストコンテンツエリア（右側） */
+    #delicious-spy-live-page .mission-text-content {
+        flex: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        text-align: left !important;
+    }
+    
+    #delicious-spy-live-page .next-mission-title {
+        font-size: 2rem !important;
+        text-align: center !important;
+    }
+    
+    #delicious-spy-live-page .next-mission-subtitle {
+        font-size: 1.1rem !important;
+        text-align: center !important;
+    }
+    
+    #delicious-spy-live-page .next-mission-date {
+        font-size: 1.5rem !important;
+        text-align: center !important;
+    }
+    
+    #delicious-spy-live-page .next-mission-venue {
+        font-size: 1.1rem !important;
+        text-align: center !important;
+        margin-bottom: 20px !important;
+    }
+    
+    #delicious-spy-live-page .next-mission-details {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+        margin-top: auto !important;
+    }
+    
+    #delicious-spy-live-page .next-mission-details > div {
+        padding: 15px 12px !important;
+    }
+    
+    #delicious-spy-live-page .next-mission-details > div > div:first-child {
+        font-size: 0.8rem !important;
+    }
+    
+    #delicious-spy-live-page .next-mission-details > div > div:nth-child(2) {
+        font-size: 1rem !important;
+    }
+    
+    #delicious-spy-live-page .next-mission-details > div > div:nth-child(3) {
+        font-size: 0.75rem !important;
+    }
+    
+    #delicious-spy-live-page .next-mission-button {
+        padding: 12px 35px !important;
+        font-size: 1rem !important;
+        margin-top: 15px !important;
+    }
+    
+    #delicious-spy-live-page .live-card {
+        padding: 25px !important;
+    }
+    
+    #delicious-spy-live-page .live-grid {
+        gap: 25px !important;
     }
 }
 </style>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HiKaRu Business Card - Pattern E (Original Enhanced)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: 91mm 55mm;
+            margin: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .card-container {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .business-card {
+            width: 91mm;
+            height: 55mm;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+
+        .bleed-guide {
+            position: absolute;
+            top: 3mm;
+            left: 3mm;
+            right: 3mm;
+            bottom: 3mm;
+            border: 1px dashed #ccc;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .card-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 5mm;
+            padding-right: 32mm; /* QRコード分のスペース確保 */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* 上部：バンド名とDrummer */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .band-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5mm;
+        }
+
+        .band-name {
+            font-family: Impact, 'Arial Black', sans-serif;
+            font-size: 13pt;
+            letter-spacing: 0.3mm;
+            color: #1a1a1a;
+        }
+
+        .role {
+            font-size: 9pt;
+            color: #666;
+            font-weight: bold;
+            letter-spacing: 0.5mm;
+        }
+
+        /* 中央：名前 */
+        .main-section {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 2mm 0;
+            max-width: calc(100% - 4mm); /* QRコード避ける */
+        }
+
+        .name {
+            font-family: Impact, 'Arial Black', sans-serif;
+            font-size: 42pt;
+            font-weight: 900;
+            color: #000;
+            letter-spacing: 1.2mm;
+            line-height: 0.9;
+        }
+
+        /* QRコード - 右側中央固定 */
+        .qr-section {
+            position: absolute;
+            right: 5mm;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5mm;
+            z-index: 10;
+        }
+
+        .qr-code {
+            width: 22mm;
+            height: 22mm;
+            background: #f8f8f8;
+            border: 3px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9pt;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .qr-label {
+            font-size: 6pt;
+            color: #666;
+            text-align: center;
+            line-height: 1.2;
+            font-weight: 600;
+        }
+
+        .qr-url {
+            font-size: 5.5pt;
+            color: #999;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* 下部：SNS情報 */
+        .social-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5mm;
+        }
+
+        .social-item {
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+            font-size: 8pt;
+            color: #333;
+        }
+
+        .social-icon {
+            width: 5mm;
+            height: 5mm;
+            background: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 7pt;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .social-icon.twitter { 
+            background: #000;
+            border-radius: 1mm;
+        }
+        .social-icon.youtube { 
+            background: #FF0000; 
+            border-radius: 1mm;
+        }
+        .social-icon.tiktok { 
+            background: #000;
+            border-radius: 1mm;
+        }
+
+        .social-handle {
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.1mm;
+            font-weight: 600;
+        }
+
+        /* アクセントカラー */
+        .accent-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40mm;
+            height: 3mm;
+            background: linear-gradient(90deg, #333 0%, #666 100%);
+        }
+
+        /* 微妙な背景パターン */
+        .background-dots {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 35mm;
+            background-image: radial-gradient(circle, #f0f0f0 1px, transparent 1px);
+            background-size: 3mm 3mm;
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .card-content {
+            z-index: 1;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .card-container {
+                box-shadow: none;
+                padding: 0;
+            }
+            .business-card {
+                border: none;
+            }
+            .bleed-guide {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="business-card">
+            <div class="background-dots"></div>
+            <div class="bleed-guide"></div>
+            <div class="accent-bar"></div>
+            
+            <div class="card-content">
+                <div class="header">
+                    <div class="band-info">
+                        <div class="band-name">DELICIOUS×SPY Drummer</div>
+                    </div>
+                </div>
+
+                <div class="main-section">
+                    <div class="name">HiKaRu</div>
+                </div>
+
+                <div class="qr-section">
+                    <div class="qr-code">QR</div>
+                    <div class="qr-label">DELICIOUS×SPY<br>Official Web Site</div>
+                    <div class="qr-url">delicious-spy.com</div>
+                </div>
+
+                <div class="social-section">
+                    <div class="social-item">
+                        <div class="social-icon twitter">𝕏</div>
+                        <div class="social-handle">@HiKaRu_Drum_69</div>
+                    </div>
+                    <div class="social-item">
+                        <div class="social-icon youtube">▶</div>
+                        <div class="social-handle">@HiKaRu_drum</div>
+                    </div>
+                    <div class="social-item">
+                        <div class="social-icon tiktok">♪</div>
+                        <div class="social-handle">@hikaru_drum</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 20px; text-align: center; color: #666; font-size: 12px;">
+        <p><strong>Pattern E: Original Enhanced</strong></p>
+        <p>現在のデザインをベースに改善・洗練したバージョン</p>
+        <p>印刷: Ctrl+P (Cmd+P) → PDFとして保存</p>
+    </div>
+</body>
+</html>

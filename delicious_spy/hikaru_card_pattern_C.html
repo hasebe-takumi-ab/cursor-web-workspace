@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HiKaRu Business Card - Pattern C (Modern Minimal)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: 91mm 55mm;
+            margin: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .card-container {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .business-card {
+            width: 91mm;
+            height: 55mm;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+
+        .bleed-guide {
+            position: absolute;
+            top: 3mm;
+            left: 3mm;
+            right: 3mm;
+            bottom: 3mm;
+            border: 1px dashed #ccc;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .card-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 7mm;
+            padding-right: 30mm; /* QRコード分のスペース確保 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* 名前を中心に配置 */
+        .name {
+            font-family: Impact, 'Arial Black', sans-serif;
+            font-size: 42pt;
+            font-weight: 900;
+            color: #000;
+            letter-spacing: 1.5mm;
+            line-height: 1;
+            margin-bottom: 2mm;
+        }
+
+        .role-band {
+            display: flex;
+            flex-direction: column;
+            gap: 1mm;
+            margin-bottom: 4mm;
+        }
+
+        .role {
+            font-size: 10pt;
+            color: #3498db;
+            font-weight: bold;
+            letter-spacing: 2mm;
+            text-transform: uppercase;
+        }
+
+        .band-name {
+            font-family: Impact, 'Arial Black', sans-serif;
+            font-size: 11pt;
+            letter-spacing: 0.5mm;
+            color: #555;
+        }
+
+        /* SNS情報を横並び */
+        .social-section {
+            display: flex;
+            gap: 5mm;
+            align-items: center;
+            margin-bottom: 3mm;
+        }
+
+        .social-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1mm;
+            font-size: 6.5pt;
+            color: #333;
+        }
+
+        .social-icon {
+            width: 5mm;
+            height: 5mm;
+            background: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 7pt;
+            font-weight: bold;
+            border-radius: 50%;
+        }
+
+        .social-icon.twitter { background: #000; }
+        .social-icon.youtube { background: #FF0000; }
+        .social-icon.tiktok { background: #000; }
+
+        .social-handle {
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.1mm;
+            font-size: 6pt;
+        }
+
+        /* QRコードを右上に固定 */
+        .qr-section {
+            position: absolute;
+            top: 50%;
+            right: 6mm;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1mm;
+            z-index: 10;
+        }
+
+        .qr-code {
+            width: 22mm;
+            height: 22mm;
+            background: #000;
+            border: 2px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8pt;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .qr-label {
+            font-size: 5pt;
+            color: #999;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        /* トップアクセント */
+        .top-accent {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1mm;
+            background: linear-gradient(90deg, #3498db 0%, #2ecc71 50%, #e74c3c 100%);
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .card-container {
+                box-shadow: none;
+                padding: 0;
+            }
+            .business-card {
+                border: none;
+            }
+            .bleed-guide {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="business-card">
+            <div class="bleed-guide"></div>
+            <div class="top-accent"></div>
+            
+            <div class="card-content">
+                <div class="name">HiKaRu</div>
+                
+                <div class="role-band">
+                    <div class="role">Drummer</div>
+                    <div class="band-name">DELICIOUS×SPY</div>
+                </div>
+
+                <div class="social-section">
+                    <div class="social-item">
+                        <div class="social-icon twitter">𝕏</div>
+                        <div class="social-handle">HiKaRu_Drum_69</div>
+                    </div>
+                    <div class="social-item">
+                        <div class="social-icon youtube">▶</div>
+                        <div class="social-handle">HiKaRu_drum</div>
+                    </div>
+                    <div class="social-item">
+                        <div class="social-icon tiktok">♪</div>
+                        <div class="social-handle">hikaru_drum</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="qr-section">
+                <div class="qr-code">QR</div>
+                <div class="qr-label">Official Site</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 20px; text-align: center; color: #666; font-size: 12px;">
+        <p><strong>Pattern C: Modern Minimal</strong></p>
+        <p>中央配置のモダンでミニマルなデザイン</p>
+        <p>印刷: Ctrl+P (Cmd+P) → PDFとして保存</p>
+    </div>
+</body>
+</html>
