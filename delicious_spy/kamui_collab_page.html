@@ -1,0 +1,331 @@
+<!-- DELICIOUS×SPY × スープカレーカムイ コラボ特設ページ -->
+<!-- WordPress: カスタムHTMLブロック -->
+
+<!-- SVGフィルター定義（かすれた質感） -->
+<svg style="position: absolute; width: 0; height: 0;">
+    <defs>
+        <filter id="grunge-stamp" x="-20%" y="-20%" width="140%" height="140%">
+            <feTurbulence type="fractalNoise" baseFrequency="1.0" numOctaves="4" result="noise" seed="2" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G" result="displaced" />
+            <feColorMatrix in="displaced" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -11" result="contrast" />
+            <feMorphology operator="erode" radius="0.6" in="contrast" result="eroded" />
+            <feGaussianBlur in="eroded" stdDeviation="0.35" result="blurred" />
+            <feComposite in="SourceGraphic" in2="blurred" operator="in" result="final" />
+        </filter>
+    </defs>
+</svg>
+
+<div id="kamui-collab-page" style="background: #ffffff; color: #2c3e50; font-family: 'Arial', sans-serif; line-height: 1.6; padding: 0; margin: 0; min-height: 500px; position: relative;">
+    
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0; position: relative;">
+        
+        <!-- ページヘッダー -->
+        <div class="collab-header" style="text-align: center; padding: 25px 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); position: relative; overflow: hidden;">
+            <!-- 装飾的な背景エフェクト -->
+            <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); animation: rotate 20s linear infinite; pointer-events: none;"></div>
+            
+            <div style="position: relative; z-index: 1;">
+                <h1 style="font-size: 2.5rem; font-weight: bold; color: #ffffff; text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); margin: 0 0 15px 0; letter-spacing: 3px; background: none !important; background-color: transparent !important; border: none !important; padding: 0 !important;">
+                    SPECIAL COLLABORATION
+                </h1>
+                <div style="font-size: 0.95rem; color: rgba(255, 255, 255, 0.95); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0; background: none !important; background-color: transparent !important;">
+                    🕵️ DELICIOUS×SPY 🕵️<br>
+                    🍛 スープカレーカムイ 🍛
+                </div>
+            </div>
+        </div>
+
+        <!-- ティザー画像セクション -->
+        <div style="padding: 30px 15px; text-align: center;">
+            <div style="max-width: 900px; margin: 0 auto; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); border: 3px solid #ffd93d;">
+                <img src="https://delicious-spy.com/wp-content/uploads/2025/11/132712.jpg" 
+                     alt="DELICIOUS×SPY × スープカレーカムイ コラボ" 
+                     style="width: 100%; height: auto; display: block;">
+            </div>
+        </div>
+
+        <!-- 応援メッセージセクション -->
+        <div style="padding: 30px 15px; text-align: center;">
+            <div style="max-width: 800px; margin: 0 auto; background: linear-gradient(145deg, #ffffff, #f8f9fa); padding: 30px 20px; border-radius: 15px; border: 3px solid #ffd93d; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);">
+                <div style="font-size: 2.1rem; font-weight: bold; color: #f39c12; margin-bottom: 20px; background: none !important; background-color: transparent !important;">
+                    🎯 武道館への挑戦応援カレー！
+                </div>
+                <p style="font-size: 1.05rem; color: #2c3e50; line-height: 1.8; margin: 0; background: none !important; background-color: transparent !important; border: none !important; padding: 0 !important;">
+                    <span style="font-size: 1.2rem; font-weight: bold; color: #ff6b6b;">DELICIOUS×SPY</span>の<br>
+                    武道館への挑戦を<br>
+                    <span style="font-size: 1.15rem; font-weight: bold; color: #3498db;">スープカレーカムイ</span>さんがコラボカレーで応援してくれました！
+                </p>
+            </div>
+        </div>
+
+        <!-- 期間表示 -->
+        <div style="text-align: center; padding: 20px 15px;">
+            <div style="display: inline-block; background: linear-gradient(145deg, #ff6b6b, #ff5252) !important; padding: 15px 40px; border-radius: 50px; box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4); border: 3px solid #ff6b6b;">
+                <div style="font-size: 0.9rem; color: rgba(255, 255, 255, 1); margin-bottom: 5px; letter-spacing: 1px; background: none !important; background-color: transparent !important;">
+                    🔥 COLLABORATION PERIOD 🔥
+                </div>
+                <div style="font-size: 1.5rem; font-weight: bold; color: #ffffff; letter-spacing: 2px; background: none !important; background-color: transparent !important;">
+                    2025年12月1日 ～ 12月14日
+                </div>
+            </div>
+        </div>
+
+        <!-- 特別イベント告知 -->
+        <div style="text-align: center; padding: 20px 15px;">
+            <div style="max-width: 700px; margin: 0 auto; background: linear-gradient(135deg, #ffd93d 0%, #f39c12 100%) !important; padding: 25px 30px; border-radius: 20px; box-shadow: 0 8px 25px rgba(243, 156, 18, 0.4); border: 3px solid #f39c12;">
+                <div style="font-size: 1.1rem; color: #2c3e50; margin-bottom: 10px; font-weight: bold; background: none !important; background-color: transparent !important;">
+                    ✨ SPECIAL EVENT ✨
+                </div>
+                <div style="font-size: 1.3rem; font-weight: bold; color: #ffffff; line-height: 1.7; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); background: none !important; background-color: transparent !important;">
+                    12月7日(日)に<br>
+                    ボーカル<span style="font-size: 1.5rem; color: #ff6b6b;">池田華桜</span>がお給仕します！！
+                </div>
+            </div>
+        </div>
+
+        <!-- コラボメニューセクション -->
+        <div style="padding: 40px 15px;">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <img src="https://delicious-spy.com/wp-content/uploads/2025/11/コラボレーションメニューAphasia.png" 
+                     alt="COLLABORATION MENU" 
+                     style="max-width: 100%; width: auto; height: auto; max-height: 80px; display: inline-block;">
+            </div>
+
+            <!-- メニューグリッド -->
+            <div style="max-width: 1000px; margin: 0 auto;">
+                
+                <!-- メニュー1: 肉しかない肉まんたけみちかんカレー -->
+                <div class="menu-card" style="background: linear-gradient(145deg, #ffffff, #f8f9fa); border-radius: 15px; overflow: hidden; border: 3px solid #74b9ff; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); transition: all 0.3s ease; margin-bottom: 30px;">
+                    <div style="width: 100%; overflow: hidden; background: #f0f8ff; display: flex; align-items: center; justify-content: center; height: 400px;">
+                        <img src="https://delicious-spy.com/wp-content/uploads/2025/11/S__185155589.jpg" 
+                             alt="肉しかない肉まんたけみちかんカレー" 
+                             style="width: 100%; height: auto; max-height: 100%; object-fit: contain;">
+                    </div>
+                    <div style="padding: 25px;">
+                        <h3 style="font-size: 1.5rem; font-weight: bold; color: #2c3e50; margin: 0 0 15px 0; line-height: 1.4; background: none !important; background-color: transparent !important; border: none !important; padding: 0 !important;">
+                            🍖 肉しかない肉まん<br>たけみちかんカレー
+                        </h3>
+                        <p style="font-size: 1rem; color: #34495e; line-height: 1.6; margin: 0 0 15px 0; background: none !important; background-color: transparent !important; border: none !important;">
+                            牛100%ハンバーグ・豚・鶏・ラムの<br>
+                            贅沢4種の肉を使用した超豪華カレー！
+                        </p>
+                        <div style="font-size: 1.8rem; font-weight: bold; color: #ff6b6b; text-align: center; background: rgba(255, 107, 107, 0.1); padding: 12px; border-radius: 10px; border: 2px solid #ff6b6b;">
+                            ¥2,480 <span style="font-size: 1rem; color: #7f8c8d;">(税込)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ドリンク2種を横並び -->
+                <div class="drinks-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    
+                    <!-- メニュー2: たけみちかんラッシー -->
+                    <div class="menu-card" style="background: linear-gradient(145deg, #ffffff, #f8f9fa); border-radius: 15px; overflow: hidden; border: 3px solid #74b9ff; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); transition: all 0.3s ease;">
+                        <div style="width: 100%; overflow: hidden; background: #f0f8ff; display: flex; align-items: center; justify-content: center; height: 350px;">
+                            <img src="https://delicious-spy.com/wp-content/uploads/2025/11/S__185155593.jpg" 
+                                 alt="たけみちかんラッシー" 
+                                 style="width: auto; height: 100%; max-width: 100%; object-fit: contain;">
+                        </div>
+                        <div style="padding: 20px;">
+                            <h3 style="font-size: 1.3rem; font-weight: bold; color: #2c3e50; margin: 0 0 12px 0; background: none !important; background-color: transparent !important; border: none !important; padding: 0 !important;">
+                                🍹 たけみちかんラッシー
+                            </h3>
+                            <p style="font-size: 0.95rem; color: #34495e; line-height: 1.6; margin: 0 0 12px 0; background: none !important; background-color: transparent !important; border: none !important;">
+                                ぶどう＆みかんの<br>フルーティーな爽やかラッシー
+                            </p>
+                            <div style="font-size: 1.5rem; font-weight: bold; color: #ff6b6b; text-align: center; background: rgba(255, 107, 107, 0.1); padding: 10px; border-radius: 10px; border: 2px solid #ff6b6b;">
+                                ¥480 <span style="font-size: 0.9rem; color: #7f8c8d;">(税込)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- メニュー3: ショボレ・ボーヌ -->
+                    <div class="menu-card" style="background: linear-gradient(145deg, #ffffff, #f8f9fa); border-radius: 15px; overflow: hidden; border: 3px solid #74b9ff; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); transition: all 0.3s ease;">
+                        <div style="width: 100%; overflow: hidden; background: #f0f8ff; display: flex; align-items: center; justify-content: center; height: 350px;">
+                            <img src="https://delicious-spy.com/wp-content/uploads/2025/11/S__185155594.jpg" 
+                                 alt="ショボレ・ボーヌ" 
+                                 style="width: auto; height: 100%; max-width: 100%; object-fit: contain;">
+                        </div>
+                        <div style="padding: 20px;">
+                            <h3 style="font-size: 1.3rem; font-weight: bold; color: #2c3e50; margin: 0 0 12px 0; background: none !important; background-color: transparent !important; border: none !important; padding: 0 !important;">
+                                🍷 ショボレ・ボーヌ
+                            </h3>
+                            <p style="font-size: 0.95rem; color: #34495e; line-height: 1.6; margin: 0 0 12px 0; background: none !important; background-color: transparent !important; border: none !important;">
+                                みかん入りボジョレ・ヌーヴォー<br>
+                                <span style="color: #ff6b6b; font-weight: bold;">※アルコールドリンク</span>
+                            </p>
+                            <div style="font-size: 1.5rem; font-weight: bold; color: #ff6b6b; text-align: center; background: rgba(255, 107, 107, 0.1); padding: 10px; border-radius: 10px; border: 2px solid #ff6b6b;">
+                                ¥600 <span style="font-size: 0.9rem; color: #7f8c8d;">(税込)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ライブ割引特典セクション（後で内容追加用） -->
+        <div style="padding: 40px 15px; margin-top: 20px;">
+            <div style="max-width: 800px; margin: 0 auto; background: linear-gradient(145deg, #ffffff, #f8f9fa); padding: 30px 20px; border-radius: 15px; border: 3px solid #ff6b6b; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <h2 style="font-size: 1.8rem; font-weight: bold; color: #2c3e50; margin: 0 0 10px 0; letter-spacing: 2px; background: none !important; background-color: transparent !important; border: none !important; padding: 0 !important;">
+                        🎁 コラボ特典
+                    </h2>
+                    <div style="font-size: 1rem; color: #7f8c8d; letter-spacing: 1px; background: none !important; background-color: transparent !important;">
+                        COLLABORATION BONUS
+                    </div>
+                </div>
+                <div style="text-align: center; padding: 30px 20px; background: rgba(243, 156, 18, 0.1); border-radius: 10px; border: 2px solid #f39c12; min-height: 100px; display: flex; align-items: center; justify-content: center;">
+                    <p style="font-size: 1.2rem; color: #f39c12; font-weight: bold; margin: 0; line-height: 1.8; background: none !important; background-color: transparent !important; border: none !important; padding: 0 !important;">
+                        📢 詳細は後日発表予定<br>
+                        お楽しみに！
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 店舗情報セクション -->
+        <div style="padding: 40px 15px; margin-top: 20px;">
+            <div style="max-width: 800px; margin: 0 auto; background: linear-gradient(145deg, #ffffff, #f8f9fa); padding: 30px 20px; border-radius: 15px; border: 3px solid #74b9ff; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);">
+                <div style="text-align: center; margin-bottom: 25px;">
+                    <h2 style="font-size: 1.8rem; font-weight: bold; color: #2c3e50; margin: 0 0 10px 0; letter-spacing: 2px; background: none !important; background-color: transparent !important; border: none !important; padding: 0 !important;">
+                        🏪 SHOP INFORMATION
+                    </h2>
+                    <div style="font-size: 1rem; color: #7f8c8d; letter-spacing: 1px; background: none !important; background-color: transparent !important;">
+                        店舗情報
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <h3 style="font-size: 1.5rem; font-weight: bold; color: #2c3e50; margin: 0 0 20px 0; background: none !important; background-color: transparent !important; border: none !important; padding: 0 !important;">
+                        スープカレーカムイ 本店
+                    </h3>
+                    <div style="font-size: 1rem; color: #34495e; line-height: 2; margin-bottom: 20px; background: none !important; background-color: transparent !important;">
+                        〒101-0041<br>
+                        東京都千代田区神田須田町2-3-24 KT須田町ビル 1F
+                    </div>
+                    
+                    <!-- Google Map埋め込み -->
+                    <div style="margin: 25px auto; max-width: 600px; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); border: 3px solid #74b9ff;">
+                        <iframe src="https://maps.google.com/maps?q=%E3%82%B9%E3%83%BC%E3%83%97%E3%82%AB%E3%83%AC%E3%83%BC%E3%82%AB%E3%83%A0%E3%82%A4+%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8D%83%E4%BB%A3%E7%94%B0%E5%8C%BA%E7%A5%9E%E7%94%B0%E9%A0%88%E7%94%B0%E7%94%BA2-3-24&output=embed" 
+                                width="100%" 
+                                height="350" 
+                                style="border:0; display: block;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    
+                    <div style="background: #f0f8ff; padding: 20px; border-radius: 10px; text-align: left; max-width: 500px; margin: 0 auto; border: 2px solid #74b9ff;">
+                        <div style="font-size: 1.1rem; font-weight: bold; color: #2c3e50; margin-bottom: 10px; background: none !important; background-color: transparent !important;">
+                            営業時間
+                        </div>
+                        <div style="font-size: 0.95rem; color: #34495e; line-height: 1.8; background: none !important; background-color: transparent !important;">
+                            <strong>平日・祝日</strong><br>
+                            ランチ 11:00～14:30(L.O.)<br>
+                            ディナー 17:00～20:30(L.O.)<br>
+                            <br>
+                            <strong>土曜日</strong><br>
+                            不定休<br>
+                            <br>
+                            <strong>日曜日</strong><br>
+                            11:00～20:30(L.O.)
+                        </div>
+                    </div>
+                    <div style="margin-top: 25px;">
+                        <a href="https://soupcurry-kamui.jp/" target="_blank" 
+                           style="display: inline-block; background: linear-gradient(145deg, #667eea, #764ba2); color: #ffffff; padding: 12px 30px; text-decoration: none; border-radius: 25px; font-weight: bold; font-size: 1rem; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4); border: 2px solid #667eea; transition: all 0.3s ease;">
+                            🌐 公式サイトはこちら
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- フッター -->
+        <div style="text-align: center; padding: 40px 20px; border-top: 2px solid #74b9ff; margin-top: 40px;">
+            <div style="font-size: 1.5rem; font-weight: bold; color: #2c3e50; margin-bottom: 15px; letter-spacing: 2px; background: none !important; background-color: transparent !important;">
+                DELICIOUS×SPY × スープカレーカムイ
+            </div>
+            <div style="color: #7f8c8d; font-size: 0.9rem; background: none !important; background-color: transparent !important;">
+                &copy; 2025 DELICIOUS×SPY. All rights reserved.
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<style>
+/* アニメーション定義 */
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#kamui-collab-page .menu-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+#kamui-collab-page .menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(116, 185, 255, 0.4);
+}
+
+/* レスポンシブ対応 */
+@media (min-width: 768px) {
+    #kamui-collab-page .collab-header h1 {
+        font-size: 3rem !important;
+    }
+    
+    #kamui-collab-page .collab-header > div > div:last-child {
+        font-size: 1.2rem !important;
+    }
+}
+
+@media (max-width: 767px) {
+    #kamui-collab-page .collab-header {
+        padding: 20px 15px !important;
+    }
+    
+    #kamui-collab-page .collab-header h1 {
+        font-size: 1.6rem !important;
+        margin-bottom: 10px !important;
+    }
+    
+    #kamui-collab-page .collab-header > div > div:last-child {
+        font-size: 0.85rem !important;
+        letter-spacing: 0.5px !important;
+    }
+    
+    /* モバイルでドリンクを縦並びに */
+    #kamui-collab-page .drinks-grid {
+        grid-template-columns: 1fr !important;
+        gap: 25px !important;
+    }
+    
+    /* モバイルで画像の高さを自動調整 */
+    #kamui-collab-page .menu-card > div:first-child {
+        height: auto !important;
+        min-height: 200px !important;
+    }
+    
+    #kamui-collab-page .menu-card img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        max-height: none !important;
+    }
+}
+</style>
+
