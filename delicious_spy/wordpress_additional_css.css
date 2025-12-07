@@ -1,0 +1,538 @@
+/* =====================================================
+   DELICIOUS×SPY WordPress 追加CSS
+   設定場所: 外観 → カスタマイズ → 追加CSS
+   最終更新: 2025/12/07
+   変更内容: モバイルヘッダー色を #00006d に変更
+   ===================================================== */
+
+/* 全てのメニューリンクに適用 */
+nav a,
+.menu a,
+.navigation a,
+.main-navigation a,
+.primary-navigation a,
+.site-navigation a,
+.header-menu a,
+.main-menu a,
+.primary-menu a,
+.nav-menu a,
+#primary-menu a,
+.wp-block-navigation a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+/* ホバー時 */
+nav a:hover,
+.menu a:hover,
+.navigation a:hover,
+.main-navigation a:hover,
+.primary-navigation a:hover,
+.site-navigation a:hover,
+.header-menu a:hover,
+.main-menu a:hover,
+.primary-menu a:hover,
+.nav-menu a:hover,
+#primary-menu a:hover,
+.wp-block-navigation a:hover {
+    color: #cccccc !important;
+}
+
+/* Cocoonのメインカラム
+ * BGの白色部分のアルファを追加するために追加 */
+.main {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* サイドバーの見出しを白文字に */
+.sidebar .widget-title,
+.sidebar .widgettitle,
+.sidebar h2,
+.sidebar h3,
+.sidebar h4,
+.sidebar h5,
+.sidebar h6 {
+    color: #ffffff !important;
+}
+
+/* サイドバー全体の見出し */
+.widget-area .widget-title,
+.widget-area .widgettitle,
+.widget-area h2,
+.widget-area h3,
+.widget-area h4,
+.widget-area h5,
+.widget-area h6 {
+    color: #ffffff !important;
+}
+
+/* Cocoon固有のサイドバー見出し */
+.sidebar-widget .widget-title,
+.sidebar-widget .widgettitle,
+.sidebar-widget h2,
+.sidebar-widget h3 {
+    color: #ffffff !important;
+}
+
+/* より包括的な指定 */
+aside .widget-title,
+aside .widgettitle,
+aside h2,
+aside h3,
+aside h4,
+aside h5,
+aside h6 {
+    color: #ffffff !important;
+}
+
+/* ニュース記事のカテゴリ部分（黒背景）を白文字に */
+.entry-card-meta,
+.entry-card-meta a,
+.cat-label,
+.cat-label a {
+    color: #ffffff !important;
+}
+
+/* ニュース記事のタイトル部分（白背景）を黒文字に */
+.entry-card-title,
+.entry-card-title a,
+.entry-title,
+.entry-title a {
+    color: #333333 !important;
+}
+
+/* リンクプレビューのタイトル部分も調整 */
+.vlp-title,
+.vlp-title a {
+    color: #333333 !important;
+}
+
+/* カテゴリラベルの背景が黒の場合の文字色 */
+.cat-label[style*="background"] {
+    color: #ffffff !important;
+}
+
+/* カテゴリ部分（黒背景）を白文字に */
+.entry-categories-tags,
+.entry-categories,
+.cat-link,
+.cat-link-11,
+.entry-categories a {
+    color: #ffffff !important;
+}
+
+/* カテゴリアイコンも白に */
+.entry-categories .fa,
+.entry-categories .cat-icon,
+.entry-categories .tax-icon {
+    color: #ffffff !important;
+}
+
+/* より具体的な指定 */
+.entry-categories-tags .entry-categories a,
+.entry-categories-tags .cat-link {
+    color: #ffffff !important;
+}
+
+/* ホバー時も白文字を維持 */
+.entry-categories a:hover,
+.cat-link:hover {
+    color: #ffffff !important;
+}
+
+/* カテゴリ部分（黒背景）を白文字に */
+.entry-categories-tags,
+.entry-categories,
+.cat-link,
+.cat-link-11,
+.entry-categories a {
+    color: #ffffff !important;
+}
+
+/* カテゴリアイコンも白に */
+.entry-categories .fa,
+.entry-categories .cat-icon,
+.entry-categories .tax-icon {
+    color: #ffffff !important;
+}
+
+/* タイトル部分（白背景）を黒文字に */
+.related-entry-card-title,
+.card-title,
+.e-card-title,
+h3.related-entry-card-title {
+    color: #333333 !important;
+}
+
+/* より具体的な指定 */
+.entry-categories-tags .entry-categories a,
+.entry-categories-tags .cat-link {
+    color: #ffffff !important;
+}
+
+/* ホバー時の色も調整 */
+.entry-categories a:hover,
+.cat-link:hover {
+    color: #ffffff !important;
+}
+
+.related-entry-card-title:hover,
+.card-title:hover,
+.e-card-title:hover {
+    color: #333333 !important;
+}
+
+/* サブメニュー全文表示CSS */
+.sub-menu a,
+.sub-menu li a,
+ul.sub-menu a,
+ul.sub-menu li a {
+    white-space: normal !important;
+    text-overflow: unset !important;
+    overflow: visible !important;
+    max-width: none !important;
+    width: auto !important;
+    display: block !important;
+}
+
+/* サブメニューコンテナの幅を広げる */
+.sub-menu,
+ul.sub-menu {
+    min-width: 110px !important;
+    width: auto !important;
+    max-width: none !important;
+}
+
+/* ヘッダー内の全てのリンク */
+#header a,
+.header-in a {
+    white-space: normal !important;
+    text-overflow: unset !important;
+    overflow: visible !important;
+}
+
+/* =====================================================
+   モバイルヘッダー関連（#00006d ダークネイビー）
+   ===================================================== */
+
+/* モバイルヘッダーボタン全体 */
+.mobile-header-menu-buttons {
+    background-color: #00006d !important;
+    color: #ffffff !important;
+}
+
+/* ハンバーガーメニューボタン */
+.mobile-menu-button {
+    background-color: #00006d !important;
+    color: #ffffff !important;
+}
+
+/* 検索ボタン */
+.mobile-search-button {
+    background-color: #00006d !important;
+    color: #ffffff !important;
+}
+
+/* ハンバーガーメニューの線を白に */
+.mobile-menu-button .menu-trigger span,
+.mobile-menu-button .menu-trigger span:before,
+.mobile-menu-button .menu-trigger span:after,
+.mobile-menu-button:before,
+.mobile-menu-button:after,
+.mobile-menu-button span {
+    background-color: #ffffff !important;
+}
+
+/* アイコン（SVG、Font Awesome）を白に */
+.mobile-header-menu-buttons svg,
+.mobile-header-menu-buttons svg path,
+.mobile-header-menu-buttons .fa {
+    fill: #ffffff !important;
+    color: #ffffff !important;
+}
+
+/* スライドインメニューの背景色と文字色 */
+.mobile-menu,
+.mobile-menu-content,
+.sidebar-menu,
+.navi-menu-content {
+    background-color: #00006d !important;
+    color: #ffffff !important;
+}
+
+/* スライドインメニューのリンクテキストも白に */
+.mobile-menu a,
+.mobile-menu-content a,
+.sidebar-menu a,
+.navi-menu-content a,
+.slide-menu a,
+.slide-menu .menu-item a {
+    color: #ffffff !important;
+}
+
+/* メニューアイテムのホバー効果 */
+.mobile-menu a:hover,
+.mobile-menu-content a:hover,
+.sidebar-menu a:hover,
+.slide-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+}
+
+/* 閉じるボタン（×）も白に */
+.slide-menu-close,
+.mobile-menu-close {
+    color: #ffffff !important;
+}
+
+/* =====================================================
+   モバイル表示の調整
+   ===================================================== */
+
+/* モバイルでのみオレンジバナー部分を非表示 */
+@media screen and (max-width: 768px) {
+    /* Cocoonのサイトタイトル部分を非表示 */
+    .site-name-text,
+    .site-title,
+    .logo-text {
+        display: none !important;
+    }
+    
+    /* オレンジ色のヘッダー背景部分を非表示 */
+    .site-header .header-container {
+        display: none !important;
+    }    
+}
+
+/* タブレット以下（1024px以下）でPC用ヘッダを完全非表示 */
+@media screen and (max-width: 1024px) {
+    /* サイト名テキストを非表示 */
+    .site-name-text {
+        display: none !important;
+    }
+    
+    /* PC用ヘッダ全体を非表示 */
+    #header {
+        display: none !important;
+    }
+}
+
+/* =====================================================
+   NEWSセクション（全デバイス対応）
+   ===================================================== */
+
+/* 全デバイス対応：NEWSセクションを画面いっぱいに */
+.new-list-box {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.new-entry-cards {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* 全デバイスで2列固定 */
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* デスクトップ・大画面：大きな画像表示 */
+@media screen and (min-width: 1200px) {
+    .new-entry-cards {
+        gap: 4px !important;
+        max-width: 800px !important; /* 最大幅を制限して画像をさらに大きく */
+        margin: 0 auto !important; /* 中央揃え */
+    }
+}
+
+/* タブレット・中画面 */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .new-entry-cards {
+        gap: 3px !important;
+    }
+}
+
+/* スマホ */
+@media screen and (max-width: 767px) {
+    .new-entry-cards {
+        gap: 2px !important;
+    }
+}
+
+/* 各ニュースカード：大きく表示 */
+.new-entry-card {
+    position: relative !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+    display: block !important;
+    margin: 0 !important;
+}
+
+/* デスクトップ：非常に大きな画像 */
+@media screen and (min-width: 1200px) {
+    .new-entry-card {
+        aspect-ratio: 16/12 !important; /* より縦長で大きく */
+    }
+}
+
+/* タブレット：大きな画像 */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .new-entry-card {
+        aspect-ratio: 16/11 !important;
+    }
+}
+
+/* スマホ */
+@media screen and (max-width: 767px) {
+    .new-entry-card {
+        aspect-ratio: 16/10 !important;
+    }
+}
+
+/* サムネイル画像 */
+.new-entry-card-thumb {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+}
+
+.new-entry-card-thumb img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    filter: brightness(0.6) !important;
+    transition: filter 0.3s ease !important;
+}
+
+/* ホバー時に少し明るく */
+.new-entry-card-link:hover .new-entry-card-thumb img {
+    filter: brightness(0.8) !important;
+}
+
+/* テキストオーバーレイ */
+.new-entry-card-content {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8)) !important;
+    margin: 0 !important;
+}
+
+/* タイトルテキスト：デバイス別サイズ調整 */
+.new-entry-card-title {
+    color: #ffffff !important;
+    line-height: 1.3 !important;
+    font-weight: bold !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.9) !important;
+    margin: 0 !important;
+}
+
+/* デスクトップ：大きなテキスト */
+@media screen and (min-width: 1200px) {
+    .new-entry-card-content {
+        padding: 40px 20px 20px !important;
+    }
+    .new-entry-card-title {
+        font-size: 18px !important;
+    }
+}
+
+/* タブレット：中サイズテキスト */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .new-entry-card-content {
+        padding: 30px 15px 15px !important;
+    }
+    .new-entry-card-title {
+        font-size: 16px !important;
+    }
+}
+
+/* スマホ：小サイズテキスト */
+@media screen and (max-width: 767px) {
+    .new-entry-card-content {
+        padding: 20px 10px 10px !important;
+    }
+    .new-entry-card-title {
+        font-size: 12px !important;
+    }
+}
+
+/* 日付を非表示 */
+.new-entry-card-date {
+    display: none !important;
+}
+
+/* =====================================================
+   ホームページ専用スタイル
+   ===================================================== */
+
+/* ホームページでのみアイキャッチ画像を中央寄せ */
+body.home .eye-catch-wrap {
+    text-align: center !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+body.home .eye-catch-wrap .eye-catch {
+    display: inline-block !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+body.home .eye-catch-wrap .eye-catch img {
+    margin: 0 auto !important;
+    display: block !important;
+}
+
+/* ホームページでのみYouTube動画を中央寄せ */
+body.home .wp-block-embed__wrapper,
+body.home .wp-block-embed__wrapper .video-container,
+body.home .wp-block-embed__wrapper .video-container .video {
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+}
+
+/* =====================================================
+   YouTube埋め込み
+   ===================================================== */
+
+/* YouTubeページでも横幅いっぱいに大きく表示 */
+.entry-content .wp-block-embed-youtube {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+}
+
+.entry-content .wp-block-embed-youtube .wp-block-embed__wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.entry-content .wp-block-embed-youtube .video-container {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.entry-content .wp-block-embed-youtube .video-container .video {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.entry-content .wp-block-embed-youtube .video-container .video iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16/9 !important;
+}
+
+/* figure要素も横幅いっぱい */
+.entry-content figure.wp-block-embed-youtube {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+}
+
