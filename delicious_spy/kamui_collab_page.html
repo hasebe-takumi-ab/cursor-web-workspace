@@ -35,12 +35,30 @@
             </div>
         </div>
 
+        <!-- 終了バナー -->
+        <div style="text-align: center; padding: 20px 15px;">
+            <div class="ended-banner" style="display: inline-block; background: linear-gradient(145deg, #5c6bc0, #3949ab) !important; padding: 20px 50px; border-radius: 10px; box-shadow: 0 6px 20px rgba(92, 107, 192, 0.4); border: 3px solid #3949ab;">
+                <div class="ended-banner-title" style="font-size: 1.8rem; font-weight: bold; color: #ffffff; letter-spacing: 3px; background: none !important; background-color: transparent !important;">
+                    ✨ コラボ期間終了 ✨
+                </div>
+                <div class="ended-banner-subtitle" style="font-size: 1rem; color: rgba(255, 255, 255, 0.9); margin-top: 10px; background: none !important; background-color: transparent !important;">
+                    たくさんのご来店ありがとうございました！
+                </div>
+            </div>
+        </div>
+
         <!-- ティザー画像セクション -->
         <div style="padding: 30px 15px; text-align: center;">
-            <div style="max-width: 900px; margin: 0 auto; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); border: 3px solid #ffd93d;">
+            <div style="max-width: 900px; margin: 0 auto; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); border: 3px solid #ffd93d; position: relative;">
                 <img src="https://delicious-spy.com/wp-content/uploads/2025/12/DELICIOUS×SpY_20251201_233556_0000.png" 
                      alt="DELICIOUS×SPY × スープカレーカムイ コラボ" 
-                     style="width: 100%; height: auto; display: block;">
+                     style="width: 100%; height: auto; display: block; filter: grayscale(30%);">
+                <!-- 終了オーバーレイ -->
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.3); display: flex; align-items: center; justify-content: center;">
+                    <div style="background: rgba(0, 0, 109, 0.9); padding: 15px 40px; border-radius: 10px; border: 2px solid #ffffff;">
+                        <span style="color: #ffffff; font-size: 1.5rem; font-weight: bold; letter-spacing: 2px;">終了しました</span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -60,22 +78,29 @@
 
         <!-- 期間表示 -->
         <div style="text-align: center; padding: 20px 15px;">
-            <div style="display: inline-block; background: linear-gradient(145deg, #ff6b6b, #ff5252) !important; padding: 15px 40px; border-radius: 50px; box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4); border: 3px solid #ff6b6b;">
+            <div style="display: inline-block; background: linear-gradient(145deg, #78909c, #546e7a) !important; padding: 15px 40px; border-radius: 50px; box-shadow: 0 6px 20px rgba(120, 144, 156, 0.4); border: 3px solid #546e7a;">
                 <div style="font-size: 0.9rem; color: rgba(255, 255, 255, 1); margin-bottom: 5px; letter-spacing: 1px; background: none !important; background-color: transparent !important;">
-                    🔥 COLLABORATION PERIOD 🔥
+                    COLLABORATION PERIOD
                 </div>
                 <div style="font-size: 1.5rem; font-weight: bold; color: #ffffff; letter-spacing: 2px; background: none !important; background-color: transparent !important;">
-                    2025年12月1日 ～ 12月14日
+                    2025年12月1日 ～ 12月14日<br>
+                    <span style="font-size: 1rem; color: #ffeb3b;">※終了しました</span>
                 </div>
             </div>
         </div>
 
-        <!-- 特別イベント告知 -->
+        <!-- 特別イベント告知（終了） -->
         <div style="text-align: center; padding: 20px 15px;">
-            <div style="max-width: 750px; margin: 0 auto; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 30px rgba(243, 156, 18, 0.4); border: 3px solid #ffd93d;">
+            <div style="max-width: 750px; margin: 0 auto; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 30px rgba(120, 144, 156, 0.4); border: 3px solid #78909c; position: relative;">
                 <img src="https://delicious-spy.com/wp-content/uploads/2025/12/2025_12_07_Meetup.jpeg" 
                      alt="12月7日 特別イベント" 
-                     style="width: 100%; height: auto; display: block;">
+                     style="width: 100%; height: auto; display: block; filter: grayscale(30%);">
+                <!-- 終了オーバーレイ -->
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.3); display: flex; align-items: center; justify-content: center;">
+                    <div style="background: rgba(0, 0, 109, 0.9); padding: 12px 30px; border-radius: 10px; border: 2px solid #ffffff;">
+                        <span style="color: #ffffff; font-size: 1.2rem; font-weight: bold; letter-spacing: 2px;">終了しました</span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -292,6 +317,20 @@
     #kamui-collab-page .collab-header > div > div:last-child {
         font-size: 0.85rem !important;
         letter-spacing: 0.5px !important;
+    }
+    
+    /* 終了バナーのモバイル対応 */
+    #kamui-collab-page .ended-banner {
+        padding: 15px 25px !important;
+    }
+    
+    #kamui-collab-page .ended-banner-title {
+        font-size: 1.2rem !important;
+        letter-spacing: 1px !important;
+    }
+    
+    #kamui-collab-page .ended-banner-subtitle {
+        font-size: 0.85rem !important;
     }
     
     /* モバイルでドリンクを縦並びに */
