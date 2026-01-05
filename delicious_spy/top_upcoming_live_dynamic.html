@@ -1,0 +1,306 @@
+<!-- DELICIOUS×SPY TOPページ用：ライブ情報自動取得セクション -->
+<!-- WordPressの「カスタムHTML」ブロックに貼り付けて使用してください -->
+
+<div id="dynamic-live-section" class="top-live-preview">
+    <style>
+        .top-live-preview {
+            font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            padding: 10px 10px 10px;
+            background: transparent;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .top-live-preview * {
+            outline: none !important;
+            box-sizing: border-box;
+        }
+        .top-live-preview .live-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-bottom: 0;
+            min-height: 200px;
+        }
+        /* カードのスタイル */
+        .top-live-preview .live-card {
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
+            border: 2px solid #e8e8e8;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            aspect-ratio: 1 / 1.2;
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+            animation: liveFadeIn 0.6s ease forwards;
+        }
+        .top-live-preview .live-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3), 0 8px 20px rgba(0,0,0,0.15);
+            border-color: #667eea;
+        }
+        .top-live-preview .live-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 3;
+        }
+        .top-live-preview .live-card:hover::before {
+            opacity: 1;
+        }
+        @keyframes liveFadeIn {
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .top-live-preview .live-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 10px 20px 80px;
+            overflow: hidden;
+        }
+        .top-live-preview .live-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, 
+                rgba(0,0,0,0) 0%, 
+                rgba(0,0,0,0.05) 50%,
+                rgba(0,0,0,0.6) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .top-live-preview .live-image img {
+            width: 98%;
+            height: auto;
+            max-height: 100%;
+            object-fit: contain;
+            object-position: top center;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+        }
+        .top-live-preview .live-card:hover .live-image img {
+            transform: scale(1.05);
+        }
+        .top-live-preview .live-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 110px;
+            padding: 15px 20px;
+            background: linear-gradient(to top, 
+                rgba(255,255,255,0.5) 0%, 
+                rgba(255,255,255,0.3) 60%,
+                rgba(255,255,255,0) 100%);
+            backdrop-filter: blur(16px) saturate(200%);
+            -webkit-backdrop-filter: blur(16px) saturate(200%);
+            z-index: 2;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 8px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+        }
+        .top-live-preview .live-title {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: #1a1a1a;
+            margin: 0;
+            line-height: 1.3;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 4px rgba(255,255,255,1), 
+                         0 2px 8px rgba(255,255,255,0.9),
+                         0 0 2px rgba(255,255,255,0.8);
+            outline: none !important;
+            border: none !important;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-height: 2.6em;
+        }
+        .top-live-preview .live-date {
+            font-size: 0.95rem;
+            color: #e74c3c;
+            font-weight: 800;
+            margin: 0;
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            display: inline-block;
+            border: 1.5px solid rgba(231, 76, 60, 0.4);
+            box-shadow: 0 2px 8px rgba(231, 76, 60, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .top-live-preview .live-card:hover .live-title {
+            color: #667eea;
+        }
+        /* ローディングアニメーション */
+        .top-live-preview .loading {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 80px 20px;
+            color: #95a5a6;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .top-live-preview .loading::after {
+            content: '...';
+            animation: loadingDots 1.5s infinite;
+        }
+        @keyframes loadingDots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60%, 100% { content: '...'; }
+        }
+        .top-live-preview .view-all-container {
+            text-align: center;
+        }
+        .top-live-preview .btn-more {
+            display: inline-block;
+            padding: 12px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(102,126,234,0.3);
+        }
+        
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .top-live-preview {
+                padding: 5px 10px 5px;
+            }
+            .top-live-preview .live-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            .top-live-preview .live-card {
+                aspect-ratio: 1 / 1.3;
+            }
+            .top-live-preview .live-info {
+                height: 75px;
+                padding: 8px 8px;
+                gap: 4px;
+            }
+            .top-live-preview .live-title {
+                font-size: 0.85rem;
+                font-weight: 800;
+                line-height: 1.15;
+                max-height: 2.3em;
+            }
+            .top-live-preview .live-date {
+                font-size: 0.7rem;
+                padding: 4px 8px;
+            }
+        }
+        @media (max-width: 480px) {
+            .top-live-preview .live-grid {
+                gap: 12px;
+            }
+            .top-live-preview .live-info {
+                height: 70px;
+                padding: 6px 6px;
+                gap: 3px;
+            }
+            .top-live-preview .live-title {
+                font-size: 0.75rem;
+                font-weight: 800;
+                line-height: 1.1;
+                max-height: 2.2em;
+            }
+            .top-live-preview .live-date {
+                font-size: 0.65rem;
+                padding: 3px 6px;
+            }
+        }
+    </style>
+
+    <div id="live-list-container" class="live-grid">
+        <div class="loading">Loading latest missions...</div>
+    </div>
+
+    <script>
+        (function() {
+            const livePageUrl = '/live/'; // 同じドメインなので相対パスでOK
+            const container = document.getElementById('live-list-container');
+
+            async function fetchLiveInfo() {
+                try {
+                    const response = await fetch(livePageUrl);
+                    if (!response.ok) throw new Error('Failed to fetch');
+                    
+                    const htmlText = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(htmlText, 'text/html');
+
+                    // LIVEページの「今後のライブ」セクションからカードを取得
+                    const liveCards = Array.from(doc.querySelectorAll('.live-card')).slice(0, 2);
+
+                    if (liveCards.length === 0) {
+                        container.innerHTML = '<div class="loading">No upcoming missions found.</div>';
+                        return;
+                    }
+
+                    container.innerHTML = ''; // ローディング消去
+
+                    liveCards.forEach((card, index) => {
+                        // データの抽出
+                        const title = card.querySelector('.next-mission-title')?.innerText || 'Mission Title';
+                        const date = card.querySelector('.next-mission-date')?.innerText || '';
+                        const imgSrc = card.querySelector('.next-mission-img')?.getAttribute('src') || 
+                                     card.querySelector('.next-mission-img-side')?.getAttribute('src') || '';
+                        
+                        // ジャンプ用のIDを取得（なければURLのみ）
+                        const cardId = card.id ? '#' + card.id : '';
+
+                        // HTMLの生成
+                        const cardHtml = `
+                            <a href="${livePageUrl}${cardId}" class="live-card" style="animation-delay: ${index * 0.2}s">
+                                <div class="live-image">
+                                    <img src="${imgSrc}" alt="${title}" onerror="this.src='https://delicious-spy.com/wp-content/uploads/2025/10/UPCOMING_OPERATIONS_Aphasia.png'; this.style.objectFit='contain';">
+                                </div>
+                                <div class="live-info">
+                                    <div class="live-date">${date}</div>
+                                    <h3 class="live-title">${title}</h3>
+                                </div>
+                            </a>
+                        `;
+                        container.insertAdjacentHTML('beforeend', cardHtml);
+                    });
+
+                } catch (error) {
+                    console.error('Error fetching live info:', error);
+                    container.innerHTML = '<div class="loading">ライブ情報の取得に失敗しました。直接ページをご確認ください。</div>';
+                }
+            }
+
+            fetchLiveInfo();
+        })();
+    </script>
+</div>
+
