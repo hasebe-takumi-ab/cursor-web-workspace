@@ -45,16 +45,48 @@
         <div class="live-grid" style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px; padding: 0 10px;">
 
             <!-- 熊谷HEAVEN'S ROCK大作戦 - 2026年遠征ライブ第1弾 -->
-            <div id="live-20260215" class="live-card fade-in" style="background: linear-gradient(145deg, #ffffff, #fff5f5); border-radius: 15px; padding: 20px 15px; border: 3px solid #e74c3c; transition: all 0.3s ease; position: relative; overflow: hidden; border-top: 4px solid #f39c12; text-align: center; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+            <div id="live-20260215" class="live-card kumagaya-live fade-in" style="background: linear-gradient(145deg, #ffffff, #fff5f5); border-radius: 15px; padding: 20px 15px; border: 3px solid #e74c3c; transition: all 0.3s ease; position: relative; overflow: hidden; border-top: 4px solid #f39c12; text-align: center; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
                 
                 <!-- メインコンテンツエリア（画像とテキストを横並び） -->
                 <div class="mission-main-layout" style="display: flex; flex-direction: column; gap: 12px;">
                     
-                    <!-- 左側: 画像エリア（PC時のみ） -->
-                    <div class="mission-image-container" style="display: none;">
-                        <img class="next-mission-img-side" src="https://delicious-spy.com/wp-content/uploads/2026/01/137475.jpg" 
-                             alt="2026年遠征ライブ第1弾 熊谷HEAVEN'S ROCK" 
-                             style="width: 100%; height: auto; object-fit: contain; object-position: center; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); border: 2px solid #e74c3c;">
+                    <!-- 左側コンテナ（PC用：画像とタイムテーブル） -->
+                    <div class="mission-left-container" style="display: flex; flex-direction: column; gap: 12px;">
+                        
+                        <!-- 画像エリア（PC時のみ） -->
+                        <div class="mission-image-container" style="display: none;">
+                            <img class="next-mission-img-side" src="https://delicious-spy.com/wp-content/uploads/2026/01/137475.jpg" 
+                                 alt="2026年遠征ライブ第1弾 熊谷HEAVEN'S ROCK" 
+                                 style="width: 100%; height: auto; object-fit: contain; object-position: center; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); border: 2px solid #e74c3c;">
+                        </div>
+                        
+                        <!-- タイムテーブル（PC用） -->
+                        <div class="mission-timetable-pc" style="display: none; background: rgba(231, 76, 60, 0.08); padding: 12px; border-radius: 8px; border: 1px solid rgba(231, 76, 60, 0.3);">
+                            <div style="color: #e74c3c; font-size: 0.8rem; font-weight: 600; margin-bottom: 8px; text-align: center;">◤ タイムテーブル ◢</div>
+                            <div style="color: #2c3e50; font-size: 0.9rem; font-weight: 500; line-height: 1.4;">
+                                <div style="display: flex; align-items: center; padding: 2px 0;">
+                                    <span style="color: #e74c3c; font-weight: 600; min-width: 60px;">17:30</span>
+                                    <span style="margin: 0 8px;">-</span>
+                                    <span>Like Arc</span>
+                                </div>
+                                <div style="display: flex; align-items: center; padding: 2px 0;">
+                                    <span style="color: #e74c3c; font-weight: 600; min-width: 60px;">18:05</span>
+                                    <span style="margin: 0 8px;">-</span>
+                                    <span style="font-weight: 700; color: #2c3e50;">DELICIOUS×SPY</span>
+                                </div>
+                                <div style="display: flex; align-items: center; padding: 2px 0;">
+                                    <span style="color: #e74c3c; font-weight: 600; min-width: 60px;">18:50</span>
+                                    <span style="margin: 0 8px;">-</span>
+                                    <span>3beat</span>
+                                </div>
+                                <div style="display: flex; align-items: center; padding: 2px 0;">
+                                    <span style="color: #e74c3c; font-weight: 600; min-width: 60px;">19:35</span>
+                                    <span style="margin: 0 8px;">-</span>
+                                    <span>Hi-BALL</span>
+                                </div>
+                            </div>
+                        </div>
+                    
                     </div>
                     
                     <!-- 右側: テキスト情報エリア -->
@@ -87,11 +119,30 @@
                                  style="max-width: 100%; width: 100%; height: auto; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); border: 2px solid #e74c3c;">
                         </div>
 
-                        <!-- 出演者情報 -->
-                        <div style="background: rgba(231, 76, 60, 0.08); padding: 12px; border-radius: 8px; margin: 10px 0; border: 1px solid rgba(231, 76, 60, 0.3);">
-                            <div style="color: #e74c3c; font-size: 0.8rem; font-weight: 600; margin-bottom: 8px;">◤ 出演者 ◢</div>
-                            <div style="color: #2c3e50; font-size: 0.9rem; font-weight: 500; line-height: 1.8;">
-                                <span style="white-space: nowrap;">DELICIOUS×SPY</span> / <span style="white-space: nowrap;">3beat</span> / <span style="white-space: nowrap;">Hi-BALL</span> / <span style="white-space: nowrap;">Like Arc</span>
+                        <!-- タイムテーブル（モバイル用） -->
+                        <div class="mission-timetable-mobile" style="background: rgba(231, 76, 60, 0.08); padding: 12px; border-radius: 8px; margin: 10px 0; border: 1px solid rgba(231, 76, 60, 0.3);">
+                            <div style="color: #e74c3c; font-size: 0.8rem; font-weight: 600; margin-bottom: 8px; text-align: center;">◤ タイムテーブル ◢</div>
+                            <div style="color: #2c3e50; font-size: 0.9rem; font-weight: 500; line-height: 1.4;">
+                                <div style="display: flex; align-items: center; padding: 2px 0;">
+                                    <span style="color: #e74c3c; font-weight: 600; min-width: 60px;">17:30</span>
+                                    <span style="margin: 0 8px;">-</span>
+                                    <span>Like Arc</span>
+                                </div>
+                                <div style="display: flex; align-items: center; padding: 2px 0;">
+                                    <span style="color: #e74c3c; font-weight: 600; min-width: 60px;">18:05</span>
+                                    <span style="margin: 0 8px;">-</span>
+                                    <span style="font-weight: 700; color: #2c3e50;">DELICIOUS×SPY</span>
+                                </div>
+                                <div style="display: flex; align-items: center; padding: 2px 0;">
+                                    <span style="color: #e74c3c; font-weight: 600; min-width: 60px;">18:50</span>
+                                    <span style="margin: 0 8px;">-</span>
+                                    <span>3beat</span>
+                                </div>
+                                <div style="display: flex; align-items: center; padding: 2px 0;">
+                                    <span style="color: #e74c3c; font-weight: 600; min-width: 60px;">19:35</span>
+                                    <span style="margin: 0 8px;">-</span>
+                                    <span>Hi-BALL</span>
+                                </div>
                             </div>
                         </div>
 
@@ -260,6 +311,102 @@
                         <div style="font-weight: bold; color: #e67e22; text-align: center; padding: 10px; border: 1px dashed #e67e22; border-radius: 5px;">📢 詳細は決まり次第告知します！</div>
                     </div>
                 </div>
+            </div>
+
+            <!-- 下北沢SHELTER大作戦 -->
+            <div id="live-20260419" class="live-card fade-in" style="background: linear-gradient(145deg, #ffffff, #fff5f7); border-radius: 15px; padding: 20px 15px; border: 3px solid #ff6b9d; transition: all 0.3s ease; position: relative; overflow: hidden; border-top: 4px solid #c44569; text-align: center; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+                
+                <!-- メインコンテンツエリア -->
+                <div class="mission-main-layout" style="display: flex; flex-direction: column; gap: 12px;">
+                    
+                    <!-- 左側: 画像エリア（PC時のみ） -->
+                    <div class="mission-image-container" style="display: none;">
+                        <img class="next-mission-img-side" src="https://delicious-spy.com/wp-content/uploads/2026/01/下北沢SHELTER大作戦.jpeg" 
+                             alt="下北沢SHELTER大作戦" 
+                             style="width: 100%; height: auto; object-fit: contain; object-position: center; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); border: 2px solid #ff6b9d;">
+                    </div>
+                    
+                    <!-- テキスト情報エリア -->
+                    <div class="mission-text-content" style="display: flex; flex-direction: column; flex: 1;">
+                        
+                        <!-- ライブタイトル -->
+                        <h3 class="next-mission-title" style="font-size: 1.1rem; font-weight: bold; margin-bottom: 15px; color: #2c3e50; background: none; border: none; text-decoration: none;">
+                            下北沢SHELTER大作戦
+                        </h3>
+                        
+                        <!-- イベント名 -->
+                        <div style="font-size: 0.9rem; margin-bottom: 10px; color: #c44569; font-weight: 600; text-align: center;">
+                            『POP BEAT JEWELLERY BOX』
+                        </div>
+                        
+                        <!-- 日時 -->
+                        <div class="next-mission-date" style="font-size: 1.2rem; color: #e74c3c; margin-bottom: 8px; font-weight: bold;">
+                            2026年4月19日(日)
+                        </div>
+                        
+                        <!-- 会場 -->
+                        <div class="next-mission-venue" style="font-size: 1rem; color: #3498db; margin-bottom: 15px; font-weight: 600;">
+                            @下北沢SHELTER
+                        </div>
+
+                        <!-- モバイル用画像 -->
+                        <div class="mission-mobile-image" style="text-align: center; margin: 10px 0;">
+                            <img class="next-mission-img" src="https://delicious-spy.com/wp-content/uploads/2026/01/下北沢SHELTER大作戦.jpeg" 
+                                 alt="下北沢SHELTER大作戦" 
+                                 style="max-width: 100%; width: 100%; height: auto; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); border: 2px solid #ff6b9d;">
+                        </div>
+
+                        <!-- 出演者情報 -->
+                        <div style="background: rgba(255, 107, 157, 0.08); padding: 12px; border-radius: 8px; margin: 10px 0; border: 1px solid rgba(255, 107, 157, 0.3);">
+                            <div style="color: #c44569; font-size: 0.8rem; font-weight: 600; margin-bottom: 8px;">◤ 出演者 ◢</div>
+                            <div style="color: #2c3e50; font-size: 0.9rem; font-weight: 500; line-height: 1.8;">
+                                <span style="white-space: nowrap;">千知</span> / 
+                                <span style="white-space: nowrap;">SHiROPiA</span> / 
+                                <span style="white-space: nowrap;">徒然書簡</span> / 
+                                <span style="white-space: nowrap;">天乞い</span> / 
+                                <span style="white-space: nowrap;">BLOOM BLUE BEAT（稲月カノンBAND）</span> / 
+                                <span style="white-space: nowrap;">DELICIOUS×SPY</span>
+                            </div>
+                        </div>
+
+                        <!-- 詳細情報グリッド -->
+                        <div class="next-mission-details" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px;">
+                            
+                            <!-- 開場/開演 -->
+                            <div style="background: rgba(52, 152, 219, 0.1); padding: 10px 8px; border-radius: 8px; text-align: center; border: 2px solid #3498db;">
+                                <div style="color: #2c3e50; font-size: 0.7rem; margin-bottom: 3px; font-weight: 600;">開場/開演</div>
+                                <div style="font-weight: bold; color: #2c3e50; font-size: 0.95rem;">10:30 / 10:45</div>
+                            </div>
+                            
+                            <!-- チケット料金 -->
+                            <div style="background: rgba(46, 204, 113, 0.1); padding: 10px 8px; border-radius: 8px; text-align: center; border: 2px solid #2ecc71;">
+                                <div style="color: #2c3e50; font-size: 0.7rem; margin-bottom: 3px; font-weight: 600;">チケット</div>
+                                <div style="font-weight: bold; color: #2c3e50; font-size: 0.85rem;">前売: ¥3,500</div>
+                                <div style="color: #e74c3c; font-size: 0.7rem; margin-top: 2px; font-weight: 600;">当日: ¥4,000</div>
+                                <div style="color: #7f8c8d; font-size: 0.65rem; margin-top: 2px;">+1D</div>
+                            </div>
+                            
+                        </div>
+
+                        <!-- 前売開始日時 -->
+                        <div id="presale-info-20260419" style="background: linear-gradient(135deg, #667eea, #764ba2); padding: 10px 12px; border-radius: 8px; margin-top: 10px; text-align: center;">
+                            <div style="color: #ffffff; font-size: 0.85rem; font-weight: 600;">
+                                🎫 前売開始：1/30（金）20:00
+                            </div>
+                        </div>
+
+                        <!-- チケット予約ボタン -->
+                        <div style="text-align: center; margin-top: 15px;">
+                            <a href="https://livepocket.jp/e/vb94q" target="_blank" 
+                               style="display: inline-block; background: linear-gradient(145deg, #ff6b6b, #ff5252); color: #ffffff; padding: 12px 30px; text-decoration: none; border-radius: 20px; font-weight: bold; font-size: 1rem; box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4); border: 2px solid #ff6b6b; transition: all 0.3s ease;">
+                                🎫 チケット予約
+                            </a>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+
             </div>
 
         </div>
@@ -732,7 +879,7 @@
         margin-bottom: 12px !important;
     }
     
-    /* PC表示: 画像を左側に配置 */
+    /* PC表示: 画像とテキストを横並びに配置 */
     #delicious-spy-live-page .mission-main-layout {
         flex-direction: row !important;
         gap: 20px !important;
@@ -767,6 +914,28 @@
         flex-direction: column !important;
         justify-content: space-between !important;
         text-align: left !important;
+    }
+    
+    /* 熊谷ライブ専用レイアウト */
+    #delicious-spy-live-page .kumagaya-live .mission-left-container {
+        flex: 0 0 50% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+    
+    #delicious-spy-live-page .kumagaya-live .mission-image-container {
+        flex: none !important;
+    }
+    
+    /* 熊谷ライブ: PC用タイムテーブルを表示 */
+    #delicious-spy-live-page .kumagaya-live .mission-timetable-pc {
+        display: block !important;
+    }
+    
+    /* 熊谷ライブ: モバイル用タイムテーブルを非表示 */
+    #delicious-spy-live-page .kumagaya-live .mission-timetable-mobile {
+        display: none !important;
     }
     
     #delicious-spy-live-page .next-mission-title {
@@ -827,3 +996,22 @@
     }
 }
 </style>
+
+<script>
+// 前売開始日時を過ぎたら非表示にする処理
+(function() {
+    // 前売開始日時を設定（2026年1月30日 20:00）
+    const presaleStartDate = new Date('2026-01-30T20:00:00+09:00');
+    
+    // 現在時刻を取得
+    const now = new Date();
+    
+    // 前売開始日時を過ぎていたら要素を非表示
+    if (now >= presaleStartDate) {
+        const presaleInfo = document.getElementById('presale-info-20260419');
+        if (presaleInfo) {
+            presaleInfo.style.display = 'none';
+        }
+    }
+})();
+</script>
