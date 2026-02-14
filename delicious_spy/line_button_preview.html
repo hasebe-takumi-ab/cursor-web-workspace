@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINE Floating Button Preview - delicious spy</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        .preview-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .preview-header {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .preview-header h1 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        .preview-header p {
+            margin: 0;
+            color: #666;
+        }
+        .preview-content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            min-height: 600px;
+        }
+        .preview-content h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .preview-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .demo-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 40px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .demo-section h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-container">
+        <div class="preview-header">
+            <h1>🎤 delicious spy - LINEフローティングボタン プレビュー</h1>
+            <p>右下のLINEボタンをチェックしてください！</p>
+        </div>
+        
+        <div class="preview-content">
+            <h2>📱 LINEフローティングボタンのプレビュー</h2>
+            <p>このページは、delicious spyのウェブサイトにLINEフローティングボタンを追加した際の見た目を確認するためのプレビューページです。</p>
+            <p>右下に表示されている緑色のLINEボタンをご確認ください。以下の特徴があります：</p>
+            <ul>
+                <li>✨ グラデーション背景（緑色）</li>
+                <li>💫 パルスアニメーション効果</li>
+                <li>🎯 ホバー時の拡大効果</li>
+                <li>📍 画面右下に固定表示</li>
+                <li>🔗 LINE公式アカウントへのリンク</li>
+            </ul>
+
+            <div class="demo-section">
+                <h3>スクロールしてもボタンが追従します</h3>
+                <p>画面をスクロールしても、LINEボタンは常に右下に表示されます。</p>
+            </div>
+
+            <h2>📝 実装コードについて</h2>
+            <p>このLINEフローティングボタンは、以下の要素で構成されています：</p>
+            <ul>
+                <li><strong>SVGアイコン：</strong> LINEの公式ロゴ</li>
+                <li><strong>アニメーション：</strong> CSSキーフレームによるパルス効果</li>
+                <li><strong>レスポンシブ対応：</strong> モバイルでも適切に表示</li>
+                <li><strong>アクセシビリティ：</strong> 適切なコントラストと視認性</li>
+            </ul>
+
+            <h2>🎨 デザインのポイント</h2>
+            <p>以下の点に注意してデザインされています：</p>
+            <ul>
+                <li>LINEブランドカラー（緑）を使用</li>
+                <li>目を引くアニメーション効果</li>
+                <li>クリックしやすいサイズとボタン形状</li>
+                <li>サイトのコンテンツを邪魔しない配置</li>
+                <li>高いコントラスト比で視認性を確保</li>
+            </ul>
+
+            <div style="height: 400px; background: linear-gradient(180deg, #f093fb 0%, #f5576c 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; margin: 40px 0;">
+                <div style="text-align: center;">
+                    <p style="color: white; margin: 0;">🎵 delicious spy 🎵</p>
+                    <p style="color: white; margin: 10px 0 0 0; font-size: 1rem;">スクロールしてボタンの動作を確認</p>
+                </div>
+            </div>
+
+            <h2>✅ 確認事項</h2>
+            <p>プレビューで以下の点を確認してください：</p>
+            <ol>
+                <li>ボタンが画面右下に固定されている</li>
+                <li>パルスアニメーションが滑らかに動作している</li>
+                <li>ホバー時にボタンが拡大し、色が変わる</li>
+                <li>スクロールしてもボタンが追従する</li>
+                <li>クリック時に新しいタブでLINEが開く</li>
+            </ol>
+
+            <div style="height: 300px; background: #e0e0e0; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 40px 0;">
+                <p style="color: #666; font-size: 1.2rem;">ページの最後までスクロール可能</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- LINEフローティングボタン -->
+    <a href="https://t.co/pnJQ0npKJq" target="_blank" id="line-floating-button" 
+       style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; text-decoration: none; display: flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #00B900, #00D900); color: white; padding: 12px 20px; border-radius: 50px; box-shadow: 0 4px 20px rgba(0, 185, 0, 0.4); transition: all 0.3s ease; font-weight: bold; font-size: 0.95rem; animation: linePulse 2s ease-in-out infinite;">
+        <!-- LINEアイコン -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink: 0;">
+            <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12.017.572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+        </svg>
+        <!-- テキスト -->
+        <span class="line-button-text" style="white-space: nowrap;">
+            友だち追加で<br>最新情報GET!
+        </span>
+    </a>
+
+    <style>
+    @keyframes linePulse {
+        0%, 100% { 
+            box-shadow: 0 4px 20px rgba(0, 185, 0, 0.4);
+            transform: scale(1);
+        }
+        50% { 
+            box-shadow: 0 6px 30px rgba(0, 185, 0, 0.6), 0 0 40px rgba(0, 185, 0, 0.3);
+            transform: scale(1.05);
+        }
+    }
+
+    #line-floating-button:hover {
+        animation: none !important;
+        transform: scale(1.1) !important;
+        box-shadow: 0 6px 35px rgba(0, 185, 0, 0.6) !important;
+        background: linear-gradient(135deg, #00D900, #00FF00) !important;
+    }
+    </style>
+
+    <script>
+        // ボタンの動作確認用のコンソールログ
+        document.getElementById('line-floating-button').addEventListener('click', function(e) {
+            console.log('LINEボタンがクリックされました！');
+        });
+
+        // ページ読み込み時の通知
+        console.log('✅ LINEフローティングボタンが正常に読み込まれました');
+        console.log('📍 ボタンの位置: 右下（fixed position）');
+        console.log('🎨 アニメーション: パルス効果が適用されています');
+    </script>
+</body>
+</html>
