@@ -1,0 +1,33 @@
+---
+description: ライブ情報ページ（band_live_complete_single_bright.html）の編集ガイドライン
+globs: "**/band_live_complete_single_bright.html"
+alwaysApply: false
+---
+
+# ライブ情報ページ ガイドライン
+
+## ボタンのテキスト制限
+
+チケット購入・予約ボタンのラベルは **絵文字アイコン＋全角9文字以内** に収める。
+これを超えるとスマホ表示で改行が発生する。
+
+- ✅ `🎫 チケット購入(会場)` — 7文字＋半角カッコ
+- ✅ `📝 チケット取り置き` — 8文字
+- ❌ `📝 チケット取り置き予約` — 10文字（改行の恐れ）
+
+全角カッコ `（）` よりも半角カッコ `()` を使うことで文字幅を節約できる。
+
+## ボタンのスタイル統一
+
+チケットボタンは以下の共通スタイルを使う：
+
+- 親 div: `display: flex; flex-direction: column; gap: 10px; margin-top: 15px; align-items: center;`
+- ボタン: `width: 80%; text-align: center; padding: 12px 30px; border-radius: 20px; font-weight: bold; font-size: 1rem;`
+
+## タイムテーブルのスタイル統一
+
+各イベントのタイムテーブルは以下のスタイルを基本とする：
+
+- フォント: `font-size: 0.8rem; font-weight: 500; line-height: 1.8;`
+- DELICIOUS×SPY の出演枠は `color: #e74c3c; font-weight: 700;` で強調
+- バンド名は `<span style="white-space: nowrap;">` で囲んで折り返し防止
