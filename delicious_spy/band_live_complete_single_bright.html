@@ -44,6 +44,104 @@
         <!-- 今後のライブカードグリッド -->
         <div class="live-grid" style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px; padding: 0 10px;">
 
+            <!-- 結成1周年記念 YouTube配信ライブ -->
+            <div id="live-20260315" class="live-card fade-in anniversary-card" style="background: linear-gradient(145deg, #0d0d0d, #1a1a2e); border-radius: 15px; padding: 0; border: 3px solid #f5c518; transition: all 0.3s ease; position: relative; overflow: hidden; text-align: center; box-shadow: 0 4px 20px rgba(245, 197, 24, 0.25), 0 0 40px rgba(245, 197, 24, 0.08);">
+                
+                <!-- 上部: ゴールドアクセントライン -->
+                <div style="height: 5px; background: linear-gradient(90deg, transparent, #f5c518, #ffd700, #f5c518, transparent);"></div>
+
+                <div style="padding: 25px 15px 20px; position: relative;">
+
+                    <!-- 背景のパーティクル装飾 -->
+                    <div class="anniversary-particles" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; overflow: hidden;">
+                        <div style="position: absolute; top: 12%; left: 8%; width: 4px; height: 4px; background: #f5c518; border-radius: 50%; opacity: 0.4; animation: particleFloat 4s ease-in-out infinite;"></div>
+                        <div style="position: absolute; top: 25%; right: 12%; width: 3px; height: 3px; background: #ffd700; border-radius: 50%; opacity: 0.3; animation: particleFloat 5s ease-in-out infinite 1s;"></div>
+                        <div style="position: absolute; bottom: 30%; left: 15%; width: 5px; height: 5px; background: #f5c518; border-radius: 50%; opacity: 0.25; animation: particleFloat 6s ease-in-out infinite 2s;"></div>
+                        <div style="position: absolute; top: 50%; right: 8%; width: 3px; height: 3px; background: #ffd700; border-radius: 50%; opacity: 0.35; animation: particleFloat 4.5s ease-in-out infinite 0.5s;"></div>
+                    </div>
+
+                    <div class="mission-main-layout" style="display: flex; flex-direction: column; gap: 12px; position: relative; z-index: 1;">
+                        
+                        <!-- 左側: 画像エリア（PC時のみ） -->
+                        <div class="mission-image-container" style="display: none;">
+                            <div style="width: 100%; aspect-ratio: 16/9; background: #000; border-radius: 10px; overflow: hidden; border: 2px solid rgba(245, 197, 24, 0.4); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);">
+                                <img class="next-mission-img-side" src="https://img.youtube.com/vi/E6wFGibyOfg/maxresdefault.jpg" 
+                                     alt="DELICIOUS×SPY 結成1周年記念 YouTube配信ライブ" 
+                                     style="width: 100%; height: 100%; object-fit: cover; object-position: center;"
+                                     onerror="this.src='https://img.youtube.com/vi/E6wFGibyOfg/hqdefault.jpg';">
+                            </div>
+                        </div>
+
+                        <div class="mission-text-content" style="display: flex; flex-direction: column; flex: 1;">
+
+                            <!-- SPECIAL MISSIONバッジ -->
+                            <div style="margin-bottom: 12px;">
+                                <span class="anniversary-badge" style="display: inline-block; font-size: 0.7rem; color: #0d0d0d; font-weight: 800; text-align: center; background: linear-gradient(135deg, #f5c518, #ffd700, #f5c518); padding: 4px 18px; border-radius: 20px; letter-spacing: 2px; text-transform: uppercase;">SPECIAL MISSION</span>
+                            </div>
+
+                            <!-- 1st Anniversary ロゴ -->
+                            <div style="margin-bottom: 8px;">
+                                <div style="font-size: 0.75rem; color: rgba(245, 197, 24, 0.7); letter-spacing: 4px; text-transform: uppercase; font-weight: 500;">DELICIOUS×SPY</div>
+                            </div>
+                            <div style="margin-bottom: 15px;">
+                                <h3 class="next-mission-title" style="font-size: 0; height: 0; margin: 0; padding: 0; overflow: hidden; border: none; background: none;">結成1周年記念 YouTube配信ライブ</h3>
+                                <div class="anniversary-title" style="font-size: 1.6rem; font-weight: 900; color: #ffffff; line-height: 1.3; letter-spacing: 1px;">結成<span style="color: #f5c518; font-size: 2rem;">1</span>周年記念</div>
+                                <div style="font-size: 1.1rem; color: #f5c518; font-weight: 700; margin-top: 4px; letter-spacing: 1px;">演奏あり LIVE配信</div>
+                            </div>
+
+                            <!-- 日時・配信情報 -->
+                            <div class="next-mission-date" style="font-size: 1.3rem; color: #ffffff; margin-bottom: 6px; font-weight: bold;">2026年3月15日(日)</div>
+                            <div style="font-size: 1.1rem; color: #f5c518; margin-bottom: 15px; font-weight: 700;">19:30 START</div>
+                            <div class="next-mission-venue" style="font-size: 0.95rem; color: #e74c3c; margin-bottom: 15px; font-weight: 600; display: none;">@YouTube LIVE</div>
+
+                            <!-- モバイル用サムネイル -->
+                            <div class="mission-mobile-image" style="text-align: center; margin: 5px 0 15px;">
+                                <div style="width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; border: 2px solid rgba(245, 197, 24, 0.4); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);">
+                                    <img class="next-mission-img" src="https://img.youtube.com/vi/E6wFGibyOfg/maxresdefault.jpg" 
+                                         alt="DELICIOUS×SPY 結成1周年記念 YouTube配信ライブ" 
+                                         style="width: 100%; height: 100%; object-fit: cover;"
+                                         onerror="this.src='https://img.youtube.com/vi/E6wFGibyOfg/hqdefault.jpg';">
+                                </div>
+                            </div>
+
+                            <!-- インタラクティブ・コンセプト -->
+                            <div style="background: linear-gradient(135deg, rgba(245, 197, 24, 0.12), rgba(255, 215, 0, 0.06)); padding: 15px; border-radius: 10px; margin: 8px 0; border: 1px solid rgba(245, 197, 24, 0.25);">
+                                <div style="color: #f5c518; font-size: 0.85rem; font-weight: 700; margin-bottom: 8px; letter-spacing: 1px;">INTERACTIVE LIVE</div>
+                                <div style="color: #ffffff; font-size: 0.95rem; font-weight: 700; line-height: 1.7;">
+                                    セットリストは<br>視聴者みんなと一緒に<br>決めていきます！
+                                </div>
+                                <div style="color: #f5c518; font-size: 0.85rem; font-weight: 600; margin-top: 6px; line-height: 1.5;">
+                                    あなたのコメントがLIVEを作る！
+                                </div>
+                            </div>
+
+                            <!-- YouTubeボタン -->
+                            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px; align-items: center;">
+                                <a href="https://www.youtube.com/live/E6wFGibyOfg" target="_blank" 
+                                   class="anniversary-yt-btn"
+                                   style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(145deg, #FF0000, #CC0000); color: #ffffff; padding: 14px 30px; text-decoration: none; border-radius: 25px; font-weight: bold; font-size: 1rem; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4); border: 2px solid #FF0000; transition: all 0.3s ease; width: 85%; text-align: center;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink: 0;">
+                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                    </svg>
+                                    YouTube LIVE を見る
+                                </a>
+                            </div>
+
+                            <!-- リマインダー -->
+                            <div style="margin-top: 12px; text-align: center;">
+                                <div style="color: rgba(255, 255, 255, 0.5); font-size: 0.7rem; line-height: 1.6;">
+                                    YouTubeページで「通知ON」にすると<br>配信開始時にお知らせが届きます
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 下部: ゴールドアクセントライン -->
+                <div style="height: 3px; background: linear-gradient(90deg, transparent, #f5c518, #ffd700, #f5c518, transparent);"></div>
+            </div>
+
             <!-- 新宿LOFT大作戦 - 2025武道館コンテスト決勝 -->
             <div id="live-20260328" class="live-card fade-in" style="background: linear-gradient(145deg, #ffffff, #fff9e6); border-radius: 15px; padding: 20px 15px; border: 3px solid #f39c12; transition: all 0.3s ease; position: relative; overflow: hidden; border-top: 4px solid #e67e22; text-align: center; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
                 <div class="mission-main-layout" style="display: flex; flex-direction: column; gap: 12px;">
@@ -968,6 +1066,29 @@
     }
 }
 
+/* 一周年カード: パーティクル浮遊アニメーション */
+@keyframes particleFloat {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+    50% { transform: translateY(-15px) scale(1.3); opacity: 0.6; }
+}
+
+/* 一周年カード: ゴールドボーダーグロー */
+@keyframes anniversaryGlow {
+    0%, 100% { box-shadow: 0 4px 20px rgba(245, 197, 24, 0.25), 0 0 40px rgba(245, 197, 24, 0.08); }
+    50% { box-shadow: 0 4px 25px rgba(245, 197, 24, 0.35), 0 0 50px rgba(245, 197, 24, 0.15); }
+}
+
+#delicious-spy-live-page .anniversary-card {
+    animation: cryptoFadeIn 1s ease-out forwards, anniversaryGlow 3s ease-in-out infinite;
+}
+
+/* 一周年YouTubeボタンホバー */
+#delicious-spy-live-page .anniversary-yt-btn:hover {
+    background: linear-gradient(145deg, #FF2020, #EE0000) !important;
+    box-shadow: 0 6px 25px rgba(255, 0, 0, 0.5) !important;
+    transform: translateY(-2px);
+}
+
 /* LINEフローティングボタン用パルスアニメーション */
 @keyframes linePulse {
     0%, 100% { 
@@ -1079,6 +1200,24 @@
         display: none !important;
     }
     
+    /* 一周年カード: PC表示 */
+    #delicious-spy-live-page .anniversary-card {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    
+    #delicious-spy-live-page .anniversary-card .mission-image-container {
+        flex: 0 0 45% !important;
+    }
+    
+    #delicious-spy-live-page .anniversary-title {
+        font-size: 2rem !important;
+    }
+    
+    #delicious-spy-live-page .anniversary-title span {
+        font-size: 2.5rem !important;
+    }
+
     #delicious-spy-live-page .next-mission-title {
         font-size: 2rem !important;
         text-align: center !important;
