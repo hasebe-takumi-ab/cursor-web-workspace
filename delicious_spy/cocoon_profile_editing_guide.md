@@ -46,7 +46,7 @@
 
 #### 3. SNSリンクの変更
 - **X**: `href="https://x.com/tommy_2b"`
-- **Instagram**: `href="https://www.instagram.com/tommy_2b69/..."`
+- **Instagram**: `href="https://www.instagram.com/ryusuke.tommy..."`
 
 ---
 
