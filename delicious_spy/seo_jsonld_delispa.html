@@ -1,0 +1,59 @@
+<!-- ============================================================
+  でりすぱ SEO用 構造化データ (JSON-LD)
+  使い方:
+   ▼ おすすめ: WordPress → 外観 → テーマファイルエディター → header.php の
+     </head> 直前にそのまま貼り付け（全ページに入る = 効果最大）
+   ▼ もしくは Cocoon の「アクセス解析・認証 → ヘッド用コード」に貼る
+   ▼ Cocoon を使っていない場合は WPCode / Insert Headers and Footers
+     プラグインで <head> 内に挿入
+============================================================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "DELICIOUS×SPY",
+  "alternateName": [
+    "でりすぱ",
+    "デリスパ",
+    "Delicious Spy",
+    "DELICIOUS SPY",
+    "delispa"
+  ],
+  "url": "https://delicious-spy.com/",
+  "logo": "https://delicious-spy.com/wp-content/uploads/logo.png",
+  "image": "https://delicious-spy.com/wp-content/uploads/logo.png",
+  "description": "「でりすぱ」こと DELICIOUS×SPY の公式サイト。ライブ情報・メンバー紹介・音源・グッズ情報を公開中。",
+  "genre": ["Rock", "J-Rock"],
+  "foundingLocation": {
+    "@type": "Place",
+    "name": "Japan"
+  },
+  "sameAs": [
+    "https://x.com/DeliciousSPY49",
+    "https://www.instagram.com/delicious_spy2025/",
+    "https://www.youtube.com/@DELICIOUS-SPY",
+    "https://eggs.mu/share?target=artist&artistName=DELICIOUS_SPY"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "DELICIOUS×SPY（でりすぱ）公式サイト",
+  "alternateName": "でりすぱ公式",
+  "url": "https://delicious-spy.com/",
+  "inLanguage": "ja",
+  "publisher": {
+    "@type": "MusicGroup",
+    "name": "DELICIOUS×SPY",
+    "alternateName": "でりすぱ"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://delicious-spy.com/?s={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
