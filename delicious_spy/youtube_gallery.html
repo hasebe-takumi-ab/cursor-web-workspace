@@ -1,0 +1,355 @@
+<!-- DELICIOUS×SPY YOUTUBE GALLERY -->
+<!-- WordPress: カスタムHTMLブロック 1つで完結 -->
+<!--
+  ▼ 3カテゴリ構成
+   1. 月間ライブダイジェスト（通常動画＋ショート混在）
+   2. スペシャル
+   3. リリース（シングル＋アルバム）
+
+  ▼ 動画追加・編集
+   - 各カードの <div class="yt-embed-wrap"> の data-yt-video-id にYouTube動画IDを入れる
+     例: youtube.com/watch?v=【ABCD1234】 → ABCD1234
+     例: youtube.com/shorts/【ABCD1234】  → ABCD1234
+   - プレイリスト連続再生したい場合は data-yt-list にプレイリストIDを入れる
+   - data-yt-title はアクセシビリティ用のタイトル（任意）
+
+  ▼ 動作の仕組み
+   - 初期HTMLに <iframe> は一切なし（WordPress/Cocoonの自動ラッパー回避）
+   - JSがロード後にプレースホルダーへ <iframe> を直接挿入
+   - YouTubeプレーヤー自体がサムネ＋▶を表示するので、
+     ユーザーは中央の▶を1タップで再生（iOSでも音付き再生が確実）
+   - iframeは loading="lazy" で遅延ロード
+-->
+
+<!-- アイキャッチ非表示 -->
+<style>
+    .single .eye-catch-wrap,
+    .single .eye-catch,
+    .single-content .eye-catch-wrap,
+    .single-content > .eye-catch,
+    .article .eye-catch-wrap {
+        display: none !important;
+    }
+</style>
+
+<div id="delispa-yt-gallery" style="background: #ffffff; color: #2c3e50; font-family: 'Arial', sans-serif; line-height: 1.6; padding: 0; margin: 0; min-height: 500px; position: relative;">
+
+    <div style="max-width: 1100px; margin: 0 auto; padding: 0; position: relative;">
+
+        <!-- ========== ページヘッダー ========== -->
+        <div class="yt-header" style="text-align: center; padding: 35px 15px; background: linear-gradient(135deg, #0033A0 0%, #c4302b 100%); position: relative; overflow: hidden;">
+            <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%); animation: ytRotate 25s linear infinite; pointer-events: none;"></div>
+            <div style="position: relative; z-index: 1;">
+                <div style="display: inline-block; background: #ffffff; color: #c4302b; font-size: 0.75rem; font-weight: bold; letter-spacing: 3px; padding: 5px 16px; border-radius: 20px; margin-bottom: 14px; box-shadow: 0 3px 10px rgba(0,0,0,0.2);">
+                    ▶ YOUTUBE CHANNEL
+                </div>
+                <h1 class="yt-h1" style="font-size: 1.9rem; font-weight: bold; color: #ffffff; text-shadow: 0 3px 12px rgba(0,0,0,0.4), 0 0 30px rgba(255,255,255,0.15); margin: 0 0 10px 0; letter-spacing: 2px; background: none !important; background-color: transparent !important; border: none !important; padding: 0 !important;">
+                    <span style="white-space: nowrap;">VIDEO</span> <span style="white-space: nowrap;">GALLERY</span>
+                </h1>
+                <div class="yt-h1-sub" style="font-size: 0.9rem; color: rgba(255,255,255,0.95); text-transform: uppercase; letter-spacing: 2px; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                    DELICIOUS×SPY MOVIES
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== イントロ ========== -->
+        <div style="padding: 25px 18px 5px; text-align: center;">
+            <p style="font-size: 0.95rem; color: #2c3e50; line-height: 1.9; margin: 0;">
+                <span style="display: inline-block; white-space: nowrap;">DELICIOUS×SPYの</span><span style="display: inline-block; white-space: nowrap;">楽曲・映像作品を</span><br>
+                <span style="display: inline-block; white-space: nowrap;">カテゴリ別に</span><span style="display: inline-block; white-space: nowrap;">まとめてチェック！</span>
+            </p>
+        </div>
+
+        <!-- ========== カテゴリタブ ========== -->
+        <div class="yt-tabs" style="display: flex; justify-content: center; gap: 8px; padding: 18px 15px 25px; flex-wrap: wrap;">
+            <button type="button" class="yt-tab yt-tab-active" data-filter="all"
+                style="background: linear-gradient(145deg, #2c3e50, #1a252f); color: #ffffff; border: 2px solid #2c3e50; font-size: 0.8rem; font-weight: bold; padding: 8px 16px; border-radius: 30px; cursor: pointer; letter-spacing: 1px; transition: all 0.25s ease; box-shadow: 0 4px 12px rgba(44,62,80,0.3);">
+                ◤ ALL
+            </button>
+            <button type="button" class="yt-tab" data-filter="monthly"
+                style="background: #ffffff; color: #16a085; border: 2px solid #16a085; font-size: 0.8rem; font-weight: bold; padding: 8px 16px; border-radius: 30px; cursor: pointer; letter-spacing: 1px; transition: all 0.25s ease;">
+                📅 MONTHLY LIVE DIGEST
+            </button>
+            <button type="button" class="yt-tab" data-filter="special"
+                style="background: #ffffff; color: #e67e22; border: 2px solid #e67e22; font-size: 0.8rem; font-weight: bold; padding: 8px 16px; border-radius: 30px; cursor: pointer; letter-spacing: 1px; transition: all 0.25s ease;">
+                🎯 SPECIAL
+            </button>
+            <button type="button" class="yt-tab" data-filter="release"
+                style="background: #ffffff; color: #0033A0; border: 2px solid #0033A0; font-size: 0.8rem; font-weight: bold; padding: 8px 16px; border-radius: 30px; cursor: pointer; letter-spacing: 1px; transition: all 0.25s ease;">
+                💿 RELEASE
+            </button>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- ① 月間ライブダイジェスト（通常動画＋ショート混在）-->
+        <!-- ============================================ -->
+        <section class="yt-section" data-cat="monthly" style="padding: 10px 15px 30px; background: linear-gradient(180deg, #f0fbf8 0%, #ffffff 100%);">
+            <div style="text-align: center; margin-bottom: 22px; padding-top: 15px;">
+                <div style="display: inline-block; font-size: 0.75rem; font-weight: bold; letter-spacing: 4px; color: #ffffff; background: #16a085; padding: 5px 18px; border-radius: 4px;">
+                    ◤ MONTHLY LIVE DIGEST ◢
+                </div>
+                <h2 style="font-size: 1.4rem; color: #16a085; margin: 12px 0 4px 0; letter-spacing: 2px; background: none !important; border: none !important; padding: 0 !important;">
+                    MONTHLY LIVE DIGEST
+                </h2>
+                <div style="font-size: 0.75rem; color: #7f8c8d; letter-spacing: 1px;">MONTHLY LIVE DIGEST &amp; SHORTS</div>
+            </div>
+
+            <div class="yt-grid" style="display: grid; grid-template-columns: 1fr; gap: 18px; max-width: 900px; margin: 0 auto;">
+
+                <!-- ショート: dTW3iqp4wIE -->
+                <div class="yt-item yt-item-short" data-type="short">
+                    <div class="yt-card-inner" style="background: linear-gradient(145deg, #ffffff, #fff5f4); border-radius: 14px; overflow: hidden; border: 3px solid #c4302b; box-shadow: 0 6px 18px rgba(196, 48, 43, 0.2); transition: all 0.3s ease; position: relative;">
+                        <div class="yt-embed-wrap" data-yt-video-id="dTW3iqp4wIE" data-yt-title="DELICIOUS×SPY ショート"></div>
+                    </div>
+                </div>
+
+                <!-- ショート: 4lbQLOT5-OQ -->
+                <div class="yt-item yt-item-short" data-type="short">
+                    <div class="yt-card-inner" style="background: linear-gradient(145deg, #ffffff, #fff5f4); border-radius: 14px; overflow: hidden; border: 3px solid #c4302b; box-shadow: 0 6px 18px rgba(196, 48, 43, 0.2); transition: all 0.3s ease; position: relative;">
+                        <div class="yt-embed-wrap" data-yt-video-id="4lbQLOT5-OQ" data-yt-title="DELICIOUS×SPY ショート"></div>
+                    </div>
+                </div>
+
+                <!-- 通常動画: p8uY13W2yuw -->
+                <div class="yt-item yt-item-video" data-type="video">
+                    <div class="yt-card-inner" style="background: linear-gradient(145deg, #ffffff, #e7f8f3); border-radius: 14px; overflow: hidden; border: 3px solid #16a085; box-shadow: 0 6px 18px rgba(22, 160, 133, 0.2); transition: all 0.3s ease; position: relative;">
+                        <div class="yt-embed-wrap" data-yt-video-id="p8uY13W2yuw" data-yt-title="DELICIOUS×SPY 月間ライブダイジェスト"></div>
+                    </div>
+                </div>
+
+                <!-- 通常動画: _BYYsqNwlT4 -->
+                <div class="yt-item yt-item-video" data-type="video">
+                    <div class="yt-card-inner" style="background: linear-gradient(145deg, #ffffff, #e7f8f3); border-radius: 14px; overflow: hidden; border: 3px solid #16a085; box-shadow: 0 6px 18px rgba(22, 160, 133, 0.2); transition: all 0.3s ease; position: relative;">
+                        <div class="yt-embed-wrap" data-yt-video-id="_BYYsqNwlT4" data-yt-title="DELICIOUS×SPY 月間ライブダイジェスト"></div>
+                    </div>
+                </div>
+
+                <!-- 通常動画: Gu8BlEp2ItQ -->
+                <div class="yt-item yt-item-video" data-type="video">
+                    <div class="yt-card-inner" style="background: linear-gradient(145deg, #ffffff, #e7f8f3); border-radius: 14px; overflow: hidden; border: 3px solid #16a085; box-shadow: 0 6px 18px rgba(22, 160, 133, 0.2); transition: all 0.3s ease; position: relative;">
+                        <div class="yt-embed-wrap" data-yt-video-id="Gu8BlEp2ItQ" data-yt-title="DELICIOUS×SPY 月間ライブダイジェスト"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- ② スペシャル                                  -->
+        <!-- ============================================ -->
+        <section class="yt-section" data-cat="special" style="padding: 10px 15px 30px;">
+            <div style="text-align: center; margin-bottom: 22px;">
+                <div style="display: inline-block; font-size: 0.75rem; font-weight: bold; letter-spacing: 4px; color: #ffffff; background: #e67e22; padding: 5px 18px; border-radius: 4px;">
+                    ◤ SPECIAL ◢
+                </div>
+                <h2 style="font-size: 1.4rem; color: #e67e22; margin: 12px 0 4px 0; letter-spacing: 2px; background: none !important; border: none !important; padding: 0 !important;">
+                    SPECIAL
+                </h2>
+                <div style="font-size: 0.75rem; color: #7f8c8d; letter-spacing: 1px;">SPECIAL PROJECTS</div>
+            </div>
+
+            <div class="yt-grid" style="display: grid; grid-template-columns: 1fr; gap: 22px; max-width: 900px; margin: 0 auto;">
+
+                <!-- T8-1cXJdFZA -->
+                <div class="yt-item yt-item-video" data-type="video">
+                    <div class="yt-card-inner" style="background: linear-gradient(145deg, #ffffff, #fef3e7); border-radius: 14px; overflow: hidden; border: 3px solid #e67e22; box-shadow: 0 6px 18px rgba(230, 126, 34, 0.2); transition: all 0.3s ease; position: relative;">
+                        <div class="yt-embed-wrap" data-yt-video-id="T8-1cXJdFZA" data-yt-title="DELICIOUS×SPY スペシャル動画"></div>
+                    </div>
+                </div>
+
+                <!-- tFn2SKCL6y4 -->
+                <div class="yt-item yt-item-video" data-type="video">
+                    <div class="yt-card-inner" style="background: linear-gradient(145deg, #ffffff, #fef3e7); border-radius: 14px; overflow: hidden; border: 3px solid #e67e22; box-shadow: 0 6px 18px rgba(230, 126, 34, 0.2); transition: all 0.3s ease; position: relative;">
+                        <div class="yt-embed-wrap" data-yt-video-id="tFn2SKCL6y4" data-yt-title="DELICIOUS×SPY スペシャル動画"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- ③ リリース（シングル＋アルバム）              -->
+        <!-- ============================================ -->
+        <section class="yt-section" data-cat="release" style="padding: 10px 15px 30px;">
+            <div style="text-align: center; margin-bottom: 22px;">
+                <div style="display: inline-block; font-size: 0.75rem; font-weight: bold; letter-spacing: 4px; color: #ffffff; background: #0033A0; padding: 5px 18px; border-radius: 4px;">
+                    ◤ RELEASE ◢
+                </div>
+                <h2 style="font-size: 1.4rem; color: #0033A0; margin: 12px 0 4px 0; letter-spacing: 2px; background: none !important; border: none !important; padding: 0 !important;">
+                    RELEASE
+                </h2>
+                <div style="font-size: 0.75rem; color: #7f8c8d; letter-spacing: 1px;">SINGLES &amp; ALBUMS</div>
+            </div>
+
+            <div class="yt-grid" style="display: grid; grid-template-columns: 1fr; gap: 22px; max-width: 900px; margin: 0 auto;">
+
+                <!-- lW8QYcFjaCE (アルバム) -->
+                <div class="yt-item yt-item-video" data-type="video">
+                    <div class="yt-card-inner" style="background: linear-gradient(145deg, #ffffff, #f0f4ff); border-radius: 14px; overflow: hidden; border: 3px solid #0033A0; box-shadow: 0 6px 18px rgba(0, 51, 160, 0.15); transition: all 0.3s ease; position: relative;">
+                        <div class="yt-embed-wrap" data-yt-video-id="lW8QYcFjaCE" data-yt-list="OLAK5uy_lrUpc8yPj5V7DvSYmWgMTqF9AUijM0TUg" data-yt-title="DELICIOUS×SPY アルバム"></div>
+                    </div>
+                </div>
+
+                <!-- 87cuYKANlYc (シングル) -->
+                <div class="yt-item yt-item-video" data-type="video">
+                    <div class="yt-card-inner" style="background: linear-gradient(145deg, #ffffff, #f0f4ff); border-radius: 14px; overflow: hidden; border: 3px solid #0033A0; box-shadow: 0 6px 18px rgba(0, 51, 160, 0.15); transition: all 0.3s ease; position: relative;">
+                        <div class="yt-embed-wrap" data-yt-video-id="87cuYKANlYc" data-yt-list="OLAK5uy_my2yBNCbIOqRrszR4LXo7LdIjsJ2n7OGk" data-yt-title="DELICIOUS×SPY シングル"></div>
+                    </div>
+                </div>
+
+                <!-- FJ4oieLff48 (シングル) -->
+                <div class="yt-item yt-item-video" data-type="video">
+                    <div class="yt-card-inner" style="background: linear-gradient(145deg, #ffffff, #f0f4ff); border-radius: 14px; overflow: hidden; border: 3px solid #0033A0; box-shadow: 0 6px 18px rgba(0, 51, 160, 0.15); transition: all 0.3s ease; position: relative;">
+                        <div class="yt-embed-wrap" data-yt-video-id="FJ4oieLff48" data-yt-list="OLAK5uy_mzeC8bJGEUBHlAYIoZnqyW3uaIYoEY5D8" data-yt-title="DELICIOUS×SPY シングル"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========== チャンネルリンク ========== -->
+        <div style="padding: 10px 15px 35px;">
+            <div class="yt-channel-card" style="max-width: 800px; margin: 0 auto; background: linear-gradient(145deg, #c4302b, #a02622); border-radius: 15px; padding: 28px 22px; box-shadow: 0 8px 25px rgba(196, 48, 43, 0.4); position: relative; overflow: hidden; text-align: center; border: 3px solid #ffffff;">
+                <div style="position: absolute; top: -100px; right: -100px; width: 250px; height: 250px; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.18) 0%, transparent 70%); pointer-events: none;"></div>
+                <div style="position: relative; z-index: 1;">
+                    <div style="font-size: 2rem; margin-bottom: 8px;">▶️</div>
+                    <h3 style="font-size: 1.2rem; color: #ffffff; margin: 0 0 8px 0; letter-spacing: 1px; background: none !important; border: none !important; padding: 0 !important;">
+                        チャンネル登録お願いします！
+                    </h3>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.95); margin: 0 0 18px 0; line-height: 1.7;">
+                        <span style="display: inline-block; white-space: nowrap;">最新MV・ライブ映像・</span><span style="display: inline-block; white-space: nowrap;">ショート動画を続々アップ中！</span>
+                    </p>
+                    <a href="https://www.youtube.com/@DELICIOUS-SPY" target="_blank" rel="noopener noreferrer"
+                       class="yt-channel-btn"
+                       style="display: inline-block; white-space: nowrap; background: #ffffff; color: #c4302b; font-size: 0.95rem; font-weight: bold; padding: 12px 26px; border-radius: 50px; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.25); letter-spacing: 0.5px; transition: all 0.3s ease; border: 2px solid #ffffff;">
+                        🎬 YouTubeチャンネルへ
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<style>
+@keyframes ytRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#delispa-yt-gallery .yt-tab { outline: none; }
+#delispa-yt-gallery .yt-tab:hover { transform: translateY(-2px); }
+#delispa-yt-gallery .yt-tab-active {
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
+}
+#delispa-yt-gallery .yt-tab-active[data-filter="all"] { background: linear-gradient(145deg, #2c3e50, #1a252f) !important; border-color: #2c3e50 !important; }
+#delispa-yt-gallery .yt-tab-active[data-filter="release"] { background: linear-gradient(145deg, #0033A0, #002878) !important; border-color: #0033A0 !important; }
+#delispa-yt-gallery .yt-tab-active[data-filter="special"] { background: linear-gradient(145deg, #e67e22, #b9651b) !important; border-color: #e67e22 !important; }
+#delispa-yt-gallery .yt-tab-active[data-filter="monthly"] { background: linear-gradient(145deg, #16a085, #0e7e68) !important; border-color: #16a085 !important; }
+
+/* セクション表示制御 */
+#delispa-yt-gallery.yt-filter-release .yt-section:not([data-cat="release"]) { display: none; }
+#delispa-yt-gallery.yt-filter-special .yt-section:not([data-cat="special"]) { display: none; }
+#delispa-yt-gallery.yt-filter-monthly .yt-section:not([data-cat="monthly"]) { display: none; }
+
+#delispa-yt-gallery .yt-card-inner:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18) !important;
+}
+
+/* 動画埋め込みラッパー（16:9固定） */
+#delispa-yt-gallery .yt-embed-wrap {
+    position: relative !important;
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    height: auto !important;
+    background: #000 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+/* aspect-ratio未対応ブラウザ向けフォールバック（padding-top trick） */
+@supports not (aspect-ratio: 1) {
+    #delispa-yt-gallery .yt-embed-wrap {
+        height: 0 !important;
+        padding-top: 56.25% !important;
+    }
+}
+#delispa-yt-gallery .yt-embed-wrap > iframe {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0 !important;
+}
+
+#delispa-yt-gallery .yt-channel-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(0,0,0,0.35) !important;
+}
+#delispa-yt-gallery .yt-channel-btn:active { transform: translateY(0); }
+
+@media (min-width: 768px) {
+    #delispa-yt-gallery .yt-header { padding: 50px 20px !important; }
+    #delispa-yt-gallery .yt-h1 { font-size: 2.6rem !important; letter-spacing: 4px !important; }
+    #delispa-yt-gallery .yt-h1-sub { font-size: 1.05rem !important; letter-spacing: 3px !important; }
+    #delispa-yt-gallery .yt-channel-card { padding: 38px 40px !important; }
+    /* PCではリリース・スペシャルは2カラム */
+    #delispa-yt-gallery .yt-section[data-cat="release"] .yt-grid,
+    #delispa-yt-gallery .yt-section[data-cat="special"] .yt-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+</style>
+
+<script>
+(function() {
+    var root = document.getElementById('delispa-yt-gallery');
+    if (!root) return;
+
+    /* ===== タブ切り替え ===== */
+    var tabs = root.querySelectorAll('.yt-tab');
+    tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+            tabs.forEach(function(t) { t.classList.remove('yt-tab-active'); });
+            tab.classList.add('yt-tab-active');
+            var filter = tab.getAttribute('data-filter');
+            root.classList.remove('yt-filter-release','yt-filter-special','yt-filter-monthly');
+            if (filter !== 'all') root.classList.add('yt-filter-' + filter);
+        });
+    });
+
+    /* ===== プレースホルダーに iframe を直接挿入 =====
+       初期HTMLにiframeを置くとWordPress/Cocoonが自動ラッパーをかける問題があるため、
+       JSで動的に挿入する。YouTubeプレーヤー自体がサムネ＋▶を表示するので、
+       ユーザーは1タップで音付き再生できる（iOSでも確実に動作） */
+    var wraps = root.querySelectorAll('.yt-embed-wrap[data-yt-video-id]');
+    wraps.forEach(function(wrapper) {
+        var videoId = wrapper.getAttribute('data-yt-video-id');
+        if (!videoId) return;
+        var listId = wrapper.getAttribute('data-yt-list') || null;
+        var origTitle = wrapper.getAttribute('data-yt-title') || 'YouTube video';
+
+        wrapper.innerHTML = '';
+
+        var src = 'https://www.youtube.com/embed/' + videoId + '?rel=0&playsinline=1';
+        if (listId) src += '&list=' + listId;
+
+        var iframe = document.createElement('iframe');
+        iframe.src = src;
+        iframe.title = origTitle;
+        iframe.loading = 'lazy';
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.setAttribute('playsinline', '');
+        iframe.setAttribute('webkit-playsinline', '');
+        iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+        iframe.style.cssText = 'position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;';
+
+        wrapper.appendChild(iframe);
+    });
+})();
+</script>

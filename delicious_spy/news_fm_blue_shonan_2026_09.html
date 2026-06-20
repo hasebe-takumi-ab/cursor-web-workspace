@@ -1,0 +1,253 @@
+<!-- DELICIOUS×SPY NEWS - FMブルー湘南 マンスリーDJ就任 -->
+<!-- WordPress: カスタムHTMLブロック 1つで完結 -->
+
+<!-- この記事のアイキャッチを非表示（投稿ページのみ・本文内では指定画像を別途使用） -->
+<style>
+    .single .eye-catch-wrap,
+    .single .eye-catch,
+    .single-content .eye-catch-wrap,
+    .single-content > .eye-catch,
+    .article .eye-catch-wrap {
+        display: none !important;
+    }
+</style>
+
+<!-- SVGフィルター定義（かすれた質感） -->
+<svg style="position: absolute; width: 0; height: 0;">
+    <defs>
+        <filter id="grunge-stamp-radio" x="-20%" y="-20%" width="140%" height="140%">
+            <feTurbulence type="fractalNoise" baseFrequency="1.0" numOctaves="4" result="noise" seed="2" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G" result="displaced" />
+            <feColorMatrix in="displaced" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -11" result="contrast" />
+            <feMorphology operator="erode" radius="0.6" in="contrast" result="eroded" />
+            <feGaussianBlur in="eroded" stdDeviation="0.35" result="blurred" />
+            <feComposite in="SourceGraphic" in2="blurred" operator="in" result="final" />
+        </filter>
+    </defs>
+</svg>
+
+<div id="delispa-news-radio" style="background: #ffffff; color: #2c3e50; font-family: 'Arial', sans-serif; line-height: 1.6; padding: 0; margin: 0; min-height: 500px; position: relative;">
+
+    <div style="max-width: 1000px; margin: 0 auto; padding: 0; position: relative;">
+
+        <!-- ページヘッダー -->
+        <div class="news-header" style="text-align: center; padding: 30px 15px; background: linear-gradient(135deg, #0033A0 0%, #002878 50%, #001a5c 100%); position: relative; overflow: hidden;">
+            <!-- 装飾的な背景エフェクト（電波風） -->
+            <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%); animation: rotate 20s linear infinite; pointer-events: none;"></div>
+
+            <!-- スキャンライン -->
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, rgba(255,204,0,0.8), transparent); animation: scanlineH 4s linear infinite; pointer-events: none;"></div>
+
+            <div style="position: relative; z-index: 1;">
+                <div style="display: inline-block; background: rgba(255, 204, 0, 0.9); color: #001a5c; font-size: 0.75rem; font-weight: bold; letter-spacing: 3px; padding: 4px 14px; border-radius: 20px; margin-bottom: 12px;">
+                    📡 BREAKING NEWS
+                </div>
+                <h1 class="news-h1" style="font-size: 1.8rem; font-weight: bold; color: #ffffff; text-shadow: 0 3px 12px rgba(0,0,0,0.4), 0 0 30px rgba(255,255,255,0.15); margin: 0 0 10px 0; letter-spacing: 2px; background: none !important; background-color: transparent !important; border: none !important; padding: 0 !important;">
+                    <span style="white-space: nowrap;">マンスリーラジオ</span><br class="news-h1-br"><span style="white-space: nowrap;">出演決定</span>
+                </h1>
+                <div class="news-h1-sub" style="font-size: 0.9rem; color: rgba(255,255,255,0.95); text-transform: uppercase; letter-spacing: 2px; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                    DELICIOUS×SPY ON AIR
+                </div>
+            </div>
+        </div>
+
+        <!-- イントロ -->
+        <div style="padding: 25px 18px 10px; text-align: center;">
+            <p style="font-size: 1rem; color: #2c3e50; line-height: 1.9; margin: 0;">
+                <span style="display: inline-block; white-space: nowrap; font-weight: bold; color: #0033A0;">FMブルー湘南</span><br>
+                <span style="display: inline-block; white-space: nowrap; font-weight: bold; color: #e74c3c;">『Y's Station Thursday』</span><span style="display: inline-block; white-space: nowrap;">にて</span><br>
+                <span style="display: inline-block; white-space: nowrap; margin-top: 6px; padding: 2px 10px; background: linear-gradient(145deg, #ffd93d, #f5c518); color: #001a5c; font-weight: bold; border-radius: 4px;">2026年9月</span><span style="display: inline-block; white-space: nowrap;">のマンスリーDJを</span><br>
+                <span style="display: inline-block; white-space: nowrap; font-weight: bold; color: #2c3e50;">「DELICIOUS×SPY」</span><span style="display: inline-block; white-space: nowrap;">が担当します！</span>
+            </p>
+        </div>
+
+        <!-- メインビジュアル -->
+        <div style="padding: 20px 15px;">
+            <div class="hero-frame" style="max-width: 720px; margin: 0 auto; border-radius: 14px; overflow: hidden; box-shadow: 0 10px 35px rgba(0, 51, 160, 0.35); border: 4px solid #0033A0; position: relative; background: #001a5c;">
+                <img src="https://delicious-spy.com/wp-content/uploads/2026/06/FM_BLUE_SHONAN_2026.jpg"
+                     alt="FMブルー湘南 Y's Station Thursday - DELICIOUS×SPY 9月マンスリーDJ"
+                     style="width: 100%; height: auto; display: block;">
+            </div>
+        </div>
+
+        <!-- 番組情報カード -->
+        <div style="padding: 20px 15px;">
+            <div class="info-card" style="max-width: 800px; margin: 0 auto; background: linear-gradient(145deg, #ffffff, #f0f4ff); border-radius: 15px; padding: 25px 20px; border: 3px solid #0033A0; box-shadow: 0 6px 20px rgba(0, 51, 160, 0.15); position: relative; overflow: hidden;">
+
+                <!-- 装飾コーナー -->
+                <div style="position: absolute; top: 0; left: 0; width: 60px; height: 60px; border-top: 4px solid #ffd93d; border-left: 4px solid #ffd93d; border-top-left-radius: 12px;"></div>
+                <div style="position: absolute; bottom: 0; right: 0; width: 60px; height: 60px; border-bottom: 4px solid #ffd93d; border-right: 4px solid #ffd93d; border-bottom-right-radius: 12px;"></div>
+
+                <div style="text-align: center; margin-bottom: 22px;">
+                    <div style="display: inline-block; font-size: 0.75rem; font-weight: bold; letter-spacing: 4px; color: #ffffff; background: #0033A0; padding: 5px 16px; border-radius: 4px;">
+                        ◤ PROGRAM INFO ◢
+                    </div>
+                </div>
+
+                <!-- 局名 -->
+                <div class="info-row" style="display: flex; flex-direction: column; gap: 6px; padding: 14px 4px; border-bottom: 1px dashed rgba(0, 51, 160, 0.3);">
+                    <div style="font-size: 0.75rem; color: #0033A0; font-weight: bold; letter-spacing: 2px;">📻 STATION / 放送局</div>
+                    <div style="font-size: 1.1rem; font-weight: bold; color: #2c3e50;">
+                        FMブルー湘南 <span style="font-size: 0.85rem; color: #7f8c8d; font-weight: 500;">（78.5MHz）</span>
+                    </div>
+                </div>
+
+                <!-- 番組名 -->
+                <div class="info-row" style="display: flex; flex-direction: column; gap: 6px; padding: 14px 4px; border-bottom: 1px dashed rgba(0, 51, 160, 0.3);">
+                    <div style="font-size: 0.75rem; color: #0033A0; font-weight: bold; letter-spacing: 2px;">🎙️ PROGRAM / 番組</div>
+                    <div style="font-size: 1.25rem; font-weight: bold; color: #e74c3c; letter-spacing: 1px;">
+                        Y's Station Thursday
+                    </div>
+                </div>
+
+                <!-- 放送日時 -->
+                <div class="info-row" style="display: flex; flex-direction: column; gap: 6px; padding: 14px 4px; border-bottom: 1px dashed rgba(0, 51, 160, 0.3);">
+                    <div style="font-size: 0.75rem; color: #0033A0; font-weight: bold; letter-spacing: 2px;">🕖 ON AIR / 放送日時</div>
+                    <div style="font-size: 1.1rem; font-weight: bold; color: #2c3e50;">
+                        毎週木曜日 <span style="color: #e74c3c;">19:00～</span>
+                    </div>
+                </div>
+
+                <!-- 担当月 -->
+                <div class="info-row" style="display: flex; flex-direction: column; gap: 6px; padding: 14px 4px;">
+                    <div style="font-size: 0.75rem; color: #0033A0; font-weight: bold; letter-spacing: 2px;">🎯 MONTHLY DJ / 担当</div>
+                    <div style="font-size: 1.1rem; font-weight: bold; color: #2c3e50;">
+                        <span style="display: inline-block; padding: 2px 10px; background: linear-gradient(145deg, #ffd93d, #f5c518); color: #001a5c; border-radius: 4px; margin-right: 6px;">2026年9月</span>
+                        マンスリーDJ
+                    </div>
+                    <div style="font-size: 1.05rem; font-weight: bold; color: #0033A0; margin-top: 4px;">
+                        ▶ DELICIOUS×SPY
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 視聴方法セクション -->
+        <div style="padding: 15px 15px 25px;">
+            <div class="listen-card" style="max-width: 800px; margin: 0 auto; background: linear-gradient(145deg, #001a5c, #0033A0); border-radius: 15px; padding: 28px 22px; box-shadow: 0 8px 25px rgba(0, 51, 160, 0.4); position: relative; overflow: hidden; border: 3px solid #ffd93d;">
+
+                <!-- 電波風アニメーション -->
+                <div style="position: absolute; top: -100px; right: -100px; width: 250px; height: 250px; border-radius: 50%; background: radial-gradient(circle, rgba(255,217,61,0.18) 0%, transparent 70%); animation: radioWave 3s ease-in-out infinite; pointer-events: none;"></div>
+
+                <div style="text-align: center; margin-bottom: 18px; position: relative; z-index: 1;">
+                    <div style="display: inline-block; font-size: 0.75rem; font-weight: bold; letter-spacing: 4px; color: #001a5c; background: #ffd93d; padding: 5px 16px; border-radius: 4px;">
+                        ◤ HOW TO LISTEN ◢
+                    </div>
+                    <h2 style="font-size: 1.4rem; color: #ffffff; margin: 14px 0 6px 0; letter-spacing: 2px; background: none !important; border: none !important; padding: 0 !important;">
+                        <span style="display: inline-block; white-space: nowrap;">全国どこからでも</span><span style="display: inline-block; white-space: nowrap;">聴ける！</span>
+                    </h2>
+                    <p style="font-size: 0.9rem; color: rgba(255,255,255,0.9); margin: 0; line-height: 1.7;">
+                        <span style="display: inline-block; white-space: nowrap;">JCBAインターネット</span><span style="display: inline-block; white-space: nowrap;">サイマルラジオを通じて</span>
+                        <span style="display: inline-block; white-space: nowrap;">全国どこからでも</span><span style="display: inline-block; white-space: nowrap;">リアルタイムで視聴可能</span>
+                    </p>
+                </div>
+
+                <!-- リンクボタン -->
+                <div style="text-align: center; position: relative; z-index: 1;">
+                    <a href="https://yokosukafm.com/" target="_blank" rel="noopener noreferrer"
+                       class="listen-btn"
+                       style="display: inline-block; white-space: nowrap; background: linear-gradient(145deg, #ffd93d, #f5c518); color: #001a5c; font-size: 0.95rem; font-weight: bold; padding: 12px 22px; border-radius: 50px; text-decoration: none; box-shadow: 0 4px 15px rgba(255, 217, 61, 0.5); letter-spacing: 0.5px; transition: all 0.3s ease; border: 2px solid #ffffff;">
+                        🎧 FMブルー湘南 公式サイト
+                    </a>
+                    <div style="font-size: 0.7rem; color: rgba(255,255,255,0.7); margin-top: 12px; word-break: break-all;">
+                        https://yokosukafm.com/
+                    </div>
+                </div>
+
+                <!-- 補足 -->
+                <div style="background: rgba(255,255,255,0.08); border: 1px dashed rgba(255,217,61,0.5); border-radius: 8px; padding: 12px 14px; margin-top: 18px; position: relative; z-index: 1;">
+                    <div style="font-size: 0.75rem; color: #ffd93d; font-weight: bold; margin-bottom: 4px; letter-spacing: 1px;">▼ 視聴方法</div>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.95); margin: 0; line-height: 1.7;">
+                        <span style="display: inline-block; white-space: nowrap;">FMブルー湘南公式サイトの</span><span style="display: inline-block; white-space: nowrap;">「インターネットで配信」</span><span style="display: inline-block; white-space: nowrap;">リンクから、</span><span style="display: inline-block; white-space: nowrap;">JCBAサイマルラジオを通じて</span><span style="display: inline-block; white-space: nowrap;">お聴きいただけます。</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 応援メッセージ -->
+        <div style="padding: 10px 15px 35px;">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center; padding: 22px 18px; background: linear-gradient(145deg, #fff8e1, #fff3c4); border-radius: 12px; border: 2px dashed #ffd93d;">
+                <div style="font-size: 1.5rem; margin-bottom: 8px;">🎤 📻 🎶</div>
+                <p style="font-size: 0.95rem; color: #2c3e50; margin: 0; line-height: 1.8; font-weight: 600;">
+                    <span style="display: inline-block; white-space: nowrap;">9月の毎週木曜19:00は</span><br>
+                    <span style="display: inline-block; white-space: nowrap; color: #e74c3c; font-size: 1.05rem;">FMブルー湘南</span><span style="display: inline-block; white-space: nowrap; color: #e74c3c; font-size: 1.05rem;">『Y's Station Thursday』</span><span style="display: inline-block; white-space: nowrap;">で</span><br>
+                    <span style="display: inline-block; white-space: nowrap; color: #0033A0; font-size: 1.05rem;">DELICIOUS×SPY</span><span style="display: inline-block; white-space: nowrap;">をぜひお聴きください！</span>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<style>
+/* アニメーション */
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes scanlineH {
+    0% { transform: translateX(-100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes radioWave {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.15); opacity: 0.9; }
+}
+
+/* リンクボタンホバー */
+#delispa-news-radio .listen-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(255, 217, 61, 0.7) !important;
+    background: linear-gradient(145deg, #ffe066, #ffd93d) !important;
+}
+
+#delispa-news-radio .listen-btn:active {
+    transform: translateY(0);
+}
+
+/* PC用レスポンシブ */
+@media (min-width: 768px) {
+    #delispa-news-radio .news-header {
+        padding: 45px 20px !important;
+    }
+
+    #delispa-news-radio .news-h1 {
+        font-size: 2.6rem !important;
+        letter-spacing: 4px !important;
+    }
+
+    #delispa-news-radio .news-h1-br {
+        display: none;
+    }
+
+    #delispa-news-radio .news-h1 span {
+        margin: 0 8px;
+    }
+
+    #delispa-news-radio .news-h1-sub {
+        font-size: 1.05rem !important;
+        letter-spacing: 3px !important;
+    }
+
+    #delispa-news-radio .info-card {
+        padding: 35px 40px !important;
+    }
+
+    #delispa-news-radio .info-row {
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 24px !important;
+    }
+
+    #delispa-news-radio .info-row > div:first-child {
+        flex: 0 0 200px;
+    }
+
+    #delispa-news-radio .listen-card {
+        padding: 35px 40px !important;
+    }
+}
+</style>
